@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('./partials/head.ejs') %> 
+
+
+<body>
+
+    <main class="main-form">
+        <div><h2>Add Recipe</h2></div>
+
+        <div class="container-form">
+            
+        <form id="forms" action="/post" method="post" enctype="multipart/form-data">
+
+            <div class="full">
+            <label for="">Recipe Name</label>
+            <input type="text" name="recipeName" id="">
+        </div>
+
+        <div class="full">
+            <label for="">Cook's Name</label>
+            <input type="text" name="cookName" id="">
+        </div>
+        
+        <div class="full">
+            <label for="">Email</label>
+            <input type="email" name="email" id="">
+        </div>
+
+            <div class="full">
+            <label for="">Category</label>
+            <select id="category" name="category">
+                <option value="breakfast">Breakfast</option>
+                <option value="Lunch">Lunch</option>
+                <option value="supper">Supper</option>
+                <option value="dessert">Dessert</option>
+                <option value="snack">Snack</option>
+                <option value="drink">Drink</option>
+              </select></div>
+
+              <div class="full">
+            <label for="">Time</label>
+            <input type="time" name="time" id=""></div>
+
+            <div class="full">
+            <label for="level">Level</label>
+            <select id="level" name="Level">
+                <option value="easy">Easy</option>
+                <option value="medium">Medium</option>
+                <option value="hard">Hard</option>
+              </select></div>
+
+              <div class="full">
+            <label for="">Ingredients</label>
+            <textarea name="ingredient" id="" cols="30" rows="10"></textarea>
+        </div>
+
+            <div class="full">
+            <label for="">Instruction</label>
+            <textarea name="instruction" id="" cols="30" rows="10"></textarea>
+        </div>
+
+            <div class="full">
+            <input type="file" name="foodImage" id="" placeholder="Upload Image">
+        </div>
+
+            <div class="full">
+            <button type="submit" value="Submit">Save Recipe</button></div>
+
+
+        </form>
+
+    </div>
+    </main>
+    
+</body>
+</html>
