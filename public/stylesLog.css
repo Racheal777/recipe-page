@@ -7,7 +7,9 @@ a:hover{
   color: #fff;  
 }
 #bg{
-    background-color: brown;
+    background-color: #212428;
+    box-shadow: 5px 5px 7px #212428, 
+                -5px -5px 7px #3e4247;
     border-radius: 10px;
     min-height: 70vh;
     /* width: 90%; */
@@ -19,7 +21,8 @@ a:hover{
     border-radius: 10px;
     width: 70%;
     margin: 5em 9em;
-    box-shadow: 2px 1px 2px 2px rgb(87, 14, 9);
+    /* box-shadow: 5px 5px 7px #212428, 
+                -5px -5px 7px #838588; */
 
 }
 
@@ -34,7 +37,7 @@ a:hover{
 }
 
 #login-container{
-    background-color: #d4c8a4;
+    background-color: #5d2411;
    
     /* box-shadow: 2px 3px 2px 3px rgb(37, 21, 20); */
     color: white;

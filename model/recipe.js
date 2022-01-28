@@ -34,9 +34,9 @@ const recipeSchema = new Schema({
         // required: true,
     },
 
-    email : {
+    level : {
         type:String,
-        enum: ["easy", "medium", "hard"],
+        enum: ["easy", "medium", "difficult"],
         // required: true,
     },
 
@@ -49,6 +49,10 @@ const recipeSchema = new Schema({
     instruction : {
         type:[String],
         lowercase: true
+    },
+
+    foodImage : {
+        type: String
     }
 }, {timestamps: true}, )
 

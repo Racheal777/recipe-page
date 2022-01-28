@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('./partials/head.ejs') %> 
+
+
+<body>
+
+    <header>
+        
+
+        <%- include('./partials/nav.ejs') %> 
+</header>
+
+<div><i id="iconss" class="fa fa-heart"></i>
+</div>
+    <main>
+        <div> <img src="/uploads/foodImage<%= recipeData.foodImage %> " alt="pic"></div>
+
+
+
+        <section class="profile-main" >
+            <h2><%= recipeData.recipeName %> </h2>
+            <div class="profile">
+                
+           
+            <div class="rating">
+
+                <i id="icon" class="fa fa-clock" aria-hidden="true"></i>
+                <p> <%= recipeData.time %>  <br>Cooking   </p>
+                 
+            </div>
+
+    
+            <div class="rating">
+                <i id="icon" class="fa fa-star" aria-hidden="true"></i>
+                <p> 30  <br>ratings  </p>             
+            </div>
+              
+
+            
+
+            <div class="rating">
+                <i id="icon" class="fa fa-fire" aria-hidden="true"></i>
+                <p> <%= recipeData.level %>  <br>Level recipes</p>
+            </div>
+
+         </div>
+
+
+            <div class="name"><p> By <%= recipeData.cookName %> </p></div>
+        </section>
+
+        <section class="sect">
+            <div class="main-text">
+                <h2>Ingredients</h2>
+                <h2 class="text3">Instructions</h2>
+            </div>
+
+        </section>
+
+        <section class="allIngre">
+            <div class="ingre">
+                <ol>
+                    <%= recipeData.ingredients%> 
+                </ol>
+            </div>
+
+            <div class="instru">
+                <ol>
+                    <li><%= recipeData.instruction %> </li>
+                </ol>
+            </div>
+        </section>
+
+        
+    </main>
+
+
+     <footer>
+        <p>Designed by Racheal</p>
+    </footer>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
