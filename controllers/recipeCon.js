@@ -11,14 +11,15 @@ const express = require('express')
 const saveData =  (req, res) => {
 
     //destructuring the objects in the model
-    const{recipeName, cookName, email, category, time,
-        ingredients,instruction} = req.body;
+    const{recipeName, cookName, email, level, category, time,
+        ingredients, instruction} = req.body;
 
         //declaring a variable to pass the object
     const addRecipe = {
         recipeName, 
         cookName, 
-        email, 
+        email,
+        level, 
         category, 
         time,
         ingredients,
@@ -29,6 +30,8 @@ const saveData =  (req, res) => {
     //creating an instance of the schema
     const recipes = new recipe(addRecipe)
 
+    // console.log(level)
+    // console.log(ingredients)
     //saving data to the database
     recipes.save().then((results) => {
         if(results)res.render('success')
@@ -44,7 +47,7 @@ const getData =  (req, res) => {
     recipe.find().then((results) => {
         if(results) {
             const reversed = results.reverse()
-            res.render("index", {title: "Home", recipess : reversed})
+            res.render("index", {title: "Home", recipes : reversed})
         }
     }).catch((err) =>{
         console.log(err)

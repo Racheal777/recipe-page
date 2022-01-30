@@ -21,6 +21,17 @@ const recipeSchema = new Schema({
         lowercase: true
 
     },
+    level : {
+        type:String,
+        enum: ["easy", "medium", "difficult"]
+        // required: true,
+    },
+
+    ingredients : {
+        type:[String],
+        lowercase: true
+
+    },
 
     category : {
         type:String,
@@ -34,18 +45,7 @@ const recipeSchema = new Schema({
         // required: true,
     },
 
-    level : {
-        type:String,
-        enum: ["easy", "medium", "difficult"],
-        // required: true,
-    },
-
-    ingredients : {
-        type:[String],
-        lowercase: true
-
-    },
-
+    
     instruction : {
         type:[String],
         lowercase: true

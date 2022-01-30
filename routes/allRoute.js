@@ -4,7 +4,7 @@ const allControl = require('../controllers/allControl')
 const router = express.Router()
 
 //rendering files
-router.get('/', allControl.home)
+// router.get('/', allControl.home)
 
 router.get('/form', allControl.form)
 

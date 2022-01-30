@@ -4,6 +4,7 @@ const mongoose = require('mongoose')
 const dotenv = require('dotenv').config()
 const allRoute = require('./routes/allRoute')
 const recipeR = require('./routes/recipeR')
+const register = require('./routes/signups')
 
 const PORT = process.env.PORT || 9000
 
@@ -34,7 +35,7 @@ app.use(express.urlencoded({extended:true}))
 //using the module
 app.use(allRoute)
 app.use(recipeR)
-
+app.use(register)
 
 
 

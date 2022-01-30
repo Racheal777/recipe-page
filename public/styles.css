@@ -8,14 +8,15 @@ body{
     background-color: black;
 }
 
+
 header{
     display: flex;
     justify-content: space-between;
     margin: auto;
     padding: 10px 20px;
-   
-
 }
+
+/* Home Page */
 
 .logo{
     color: #ffab32;
@@ -68,20 +69,7 @@ nav a:hover{
     left: 90%;
     top: 21%;
 }
-/* form{
-    width: 100%;
-    margin: auto;
-    padding: 4px 10px;
 
-} */
-
-/* input{
-    width: 100%;
-    padding: 0.5em;
-} */
-/* #iconz{
-    
-} */
 #icon{
     color: #ffab32;
     position: absolute;
@@ -178,13 +166,12 @@ text h2{
 }
 .container{
     width: 95%;
-    height: 85%;
     margin: auto;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    grid-column-gap: 35px;
-    grid-row-gap: 38px; 
+    /* grid-template-rows: repeat(2, 1fr); */
+    /* grid-column-gap: 35px;
+    grid-row-gap: 38px;  */
 
 }
 
@@ -192,7 +179,6 @@ text h2{
     width: 90%;
     background-color: #272726;
     padding: 1em;
-    position: relative;
     border-radius: 13px;
 }
 .cards p{
@@ -270,6 +256,10 @@ footer{
 }
 
 
+
+
+
+
 /* form styling */
 
 
@@ -296,13 +286,7 @@ footer{
     padding: 2.5rem;
     border-radius: 1rem;
     gap: 2rem;
-    /* width: 70%; */
-    /* height: 50%; */
-    background-color: transparent;
-    /* margin-top: 2em;
-    margin-left: 16em; */
-    
-    
+    background-color: transparent;  
     
 }
 
@@ -378,6 +362,9 @@ textarea {
 
 
 
+
+
+
   /* recipe */
 
   main img{
@@ -405,8 +392,9 @@ textarea {
   .allIngre{
       color: rgb(235, 231, 212);
       display: flex;
-      width: 100%;
+      width: 95%;
       padding: 1em;
+      margin: auto;
   }
 
   .ingre{
@@ -419,7 +407,7 @@ textarea {
   }
 
   .instru{
-      width: 55%;
+      width: 50%;
       display: block;
       padding: 5px 9px;
       word-spacing: 5px;
@@ -429,6 +417,69 @@ textarea {
   }
 
   /* profile */
+
+  .contents{
+    background-color: #222528;
+    width: 90%;
+    position: relative;
+    border-radius: 3em;
+    margin: 1em auto;
+    padding: 1.5em;
+    color: antiquewhite;
+}
+
+.contents button{
+    background-color: black;
+    color: rgb(247, 247, 242);
+    border-radius: 6px;
+    padding: 10px 15px;
+    text-align: center;
+    font-size: 1em;
+    border: none;
+    margin: 1.3em 2em;
+    box-shadow: 3px 3px 3px rgb(117, 117, 3),
+                -3px -3px 3px rgb(34, 34, 32);  
+}
+.containers{
+    width: 95%;
+    position: relative;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* grid-template-rows: repeat(2, 1fr); 
+    grid-column-gap: 35px;
+    grid-row-gap: 38px;  */
+
+}
+
+.cardss{
+    position: relative;
+    width: 90%;
+    background-color: #272726;
+    padding: 1em;
+    border-radius: 13px;
+}
+
+
+.containers .cardss img{
+    width: 100%;
+    border-radius: 10px;
+}
+
+.containers .cardss button{
+    background-color: black;
+    position: absolute;
+    top: 70%;
+    left: 55%;
+    color: rgb(247, 247, 242);
+    border-radius: 6px;
+    padding: 4px 8px;
+    text-align: center;
+    border: none;
+    margin: 0.7em auto;
+    box-shadow: 3px 3px 4px rgb(117, 117, 3),
+                -3px -3px 4px rgb(34, 34, 32);  
+}
 
   .profile-main{
       
@@ -516,11 +567,11 @@ font-size: 1.5em;
   }
 .main-text{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     /* margin: auto; */
     /* text-align: center;
      */
-    margin: 2em auto;
+    margin: 1em auto;
 }
 .main-text h2{
     padding: 2px 30px;

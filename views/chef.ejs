@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('./partials/head.ejs') %> 
+
+
+<body>
+    <header>
+        
+        <%- include('./partials/nav.ejs') %> 
+       
+
+</header>
+        <section class="chef">
+           
+                
+           
+        </section>
+        
+  
+
+    <section>
+       
+
+
+        <div class="contentt">
+            <button type="submit">Chefs</button>
+
+            <div class="contentz">
+
+                
+                    <% if (signup.length > 0) { %>
+                     <% signup.forEach(profile => { %>
+                      
+                        <div class="list">
+                    
+                            <a href="/chef/<%= profile._id %> "> 
+                    <h2><%= profile.firstName %> </h2>
+                    <p><%= profile.email %> </p>
+
+                </div>
+
+            </a>
+
+                
+                    <% }) %>
+                    <% }  else { %>  
+                        <p><%= "No chefs to display currently" %> </p>
+            
+                        <% } %>  %> 
+                
+    
+              </div>  
+        </div>
+    </section>
+
+   
+
+
+   <%- include('./partials/footer.ejs') %> 
+
+    
+</body>
+</html>

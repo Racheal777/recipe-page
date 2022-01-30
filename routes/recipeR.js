@@ -27,7 +27,7 @@ const upload = multer({storage})
 //adding the variable name to the post request
 router.post('/post', upload.single('foodImage'), recipeCon.saveData)
 
-router.get('/get', recipeCon.getData )
+router.get('/', recipeCon.getData )
 
 router.get('/get/:id', recipeCon.getOneData )
 
