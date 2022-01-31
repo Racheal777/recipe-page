@@ -3,49 +3,51 @@
     <%- include('./partials/head.ejs') %> 
 
 <body>
+<header>
+
 
     <%- include('./partials/nav.ejs') %> 
 
 <section id="bg">
 
 
-    <section id="signup-page">
+            <!-- <section id="signup-page"> -->
 
-        <div id="signup-side">
-            <img src="/images/dou3.jpg" alt="picture">
+                <!-- <div id="signup-side">
+                    <img src="/images/dou3.jpg" alt="picture">
 
-        </div>
-        <div id="login-container">
+                </div> -->
+                <div id="login-container">
 
-            <!-- <h3>Register</h3> -->
-            <h2>Get Started.</h2> 
-            <span>Already have an Account <a href="/login">LogIn</a></h4></span><br>
+                    <!-- <h3>Register</h3> -->
+                    <h2>Get Started.</h2> 
+                    <span>Already have an Account <a href="/login">LogIn</a></h4></span><br>
+                    
+                    
+                    <form id="form-input" action="/signup" method="post" enctype="multipart/form-data">
+                        <input type="text" placeholder="FirstName" name="firstName">
+                        <input type="text" placeholder="LastName" name="lastName">
+                        <input type="email" placeholder="Email" name="email">
+                        <input type="text" placeholder="Username" name="userName">
+                        <input type="password" placeholder="Password" name="password">
+
+                        
+                            <input type="file" name="avatar" id="" placeholder="Upload Image">
+                        
+                        <button type="submit" value="Submit">SignUp</button>
+                        <!-- <p class="text">Have an account? <a href="/login">Log In</a> </p> -->
             
             
-            <form id="form-input" action="/signup" method="post" enctype="multipart/form-data">
-                <input type="text" placeholder="FirstName" name="firstName">
-                <input type="text" placeholder="LastName" name="lastName">
-                <input type="email" placeholder="Email" name="email">
-                <input type="text" placeholder="Username" name="userName">
-                <input type="password" placeholder="Password" name="password">
-
+                    </form>
+                </div>
+            
+            
                 
-                    <input type="file" name="avatar" id="" placeholder="Upload Image">
-                
-                <button type="submit" value="Submit">SignUp</button>
-                <!-- <p class="text">Have an account? <a href="/login">Log In</a> </p> -->
-    
-    
-            </form>
-        </div>
-    
-       
-        
-    </section>
-    
-</section>
+                <!-- </section> -->
+            
+            </section>
 
-
+</header>
     <script src="../index.js"></script>
 </body>
 </html>

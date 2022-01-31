@@ -16,6 +16,8 @@ router.get('/login', allControl.login)
 
 router.get('/signup', allControl.signup)
 
+router.get('/contact', allControl.contact)
+
 
 
 

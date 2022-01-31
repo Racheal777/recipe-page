@@ -1,0 +1,54 @@
+/* recipe */
+
+main img{
+    
+    width: 30%;
+    height: 60vh;
+    /* border-radius: 100%; */
+    margin: 1em 27em;
+}
+#iconss{
+  color: red;
+  font-size: 2.4em;
+  padding: 6px 4px;
+  position: absolute;
+  left: 90%;
+  /* top: 50%; */
+  
+}
+.name{
+    /* padding: 1em; */
+    margin: 1em auto;
+    font-family: fantasy;
+    font-size: 2em;
+    color: rgb(201, 47, 67);
+    text-transform: uppercase;
+}
+.allIngre{
+    color: white;
+    display: flex;
+    width: 95%;
+    padding: 1em;
+    margin: auto;
+}
+
+.ingre{
+    width: 40%;
+    display: block;
+    padding: 5px 9px;
+    word-spacing: 3px;
+    letter-spacing: 2px;
+    margin: 1em auto;
+}
+
+.instru{
+    width: 50%;
+    display: block;
+    padding: 5px 9px;
+    word-spacing: 5px;
+    margin: 1em auto;
+    letter-spacing: 2px;
+    background-color: rgba(158, 184, 184, 0.493);
+    
+}
+

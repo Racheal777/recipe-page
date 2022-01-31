@@ -1,0 +1,67 @@
+#contacts{
+    display: flex;
+    width: 90%;
+    margin: 2em auto;
+
+    background-color: rgba(54, 155, 155, 0.651);
+    border-radius: 10px;
+}
+
+
+#contactss{
+    display: none;
+    width: 90%;
+    margin: 2em auto;
+    padding: 1em;
+
+    background-color: rgba(54, 155, 155, 0.651);
+    border-radius: 10px;
+    transition: 2s;
+    animation: fadeIn 1.5s;
+    animation: fadeOut 1.5s;
+    animation-name: fadeIn;
+  
+  }
+  
+  @keyframes fadeOut {
+    from {opacity: 1;}
+    to {opacity: 0}
+  }
+
+  @keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1}
+  }
+
+
+
+
+#contact{
+    margin: 1em auto;
+    width: 40%;
+    /* color: white; */
+    text-align: center;
+
+}
+
+#contact #icons{
+    padding: 0.5em;
+    color: rgb(202, 52, 77);
+    font-size: 1.4em;
+}
+
+#container-form{
+    margin: 1em auto;
+    width: 45%;
+}
+
+#container-form button{
+    background-color: #0e0f11;
+    color: rgb(247, 247, 242);
+    border-radius: 6px;
+    padding: 10px 15px;
+    text-align: center;
+    font-size: 1em;
+    border: none;
+    margin: 1.3em 2em;
+}

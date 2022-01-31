@@ -9,7 +9,6 @@
         
 
         <%- include('./partials/nav.ejs') %> 
-</header>
 
 <div><i id="iconss" class="fa fa-heart"></i>
 </div>
@@ -76,12 +75,72 @@
         </section>
 
         
-    </main>
+        </main>
 
+        <div class="tag">
+            <button id="tags" type="submit">comment </button>
+            
+        </div> 
+
+        <section id="commentss">
+            <div id="cardzz">
+                <h2>Racheal</h2>
+                <p>Recipe looks great, i will try it</p>
+            </div>
+
+            <div id="cardzz">
+                <h2>Racheal</h2>
+                <p>Recipe looks great, i will try it</p>
+            </div>
+        </section>
+
+
+        <section id="contactss">
+            
+            <div id="contact">
+                <h3>Reviews: 
+                    <p>Let us know what you think</p>
+                    <p>Your concerns are our priority</p>
+                </h3>
+
+
+                </div>
+                <div id="container-form">
+
+                <h3>Reviews</h3>
+                <form id="form-input" action="/comment" method ="post">
+                    <input type="text" name="name" id="name" placeholder="FullName" required>
+                    <textarea title="message" name="message" placeholder="write here" required></textarea>
+                    <label> Your overall experience with us ?</label><br>
+        
+                    <span class="star-rating">
+                    <input type="radio" name="rating1" value="1"><i class="fa-regular fa-star"></i>
+                    <input type="radio" name="rating1" value="2"><i class="fa-regular fa-star"></i>
+                    <input type="radio" name="rating1" value="3"><i class="fa-regular fa-star"></i>
+                    <input type="radio" name="rating1" value="4"><i class="fa-regular fa-star"></i>
+                    <input type="radio" name="rating1" value="5"><i class="fa-regular fa-star"></i>
+                    </span>
+
+                </br>
+                
+
+                    <button type="submit" value="Submit"> Send </button>
+
+                </form>
+            </div>
+
+
+
+    </section>
+
+
+</header>
 
      <footer>
         <p>Designed by Racheal</p>
     </footer>
+
+    <script src="../site.js"></script>
 </body>
 </html>
 

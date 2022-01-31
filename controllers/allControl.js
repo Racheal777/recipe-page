@@ -28,6 +28,10 @@ const signup =  (req, res) => {
     res.render('signup', {title :"Register"})
 }
 
+const contact =  (req, res) => {
+    res.render('call', {title :"Contact Us"})
+}
+
 
 
 //exporting module
@@ -37,6 +41,7 @@ module.exports = {
     profile,
     recipe,
     login,
-    signup
+    signup,
+    contact
 
 }
