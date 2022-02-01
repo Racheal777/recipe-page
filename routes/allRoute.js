@@ -18,6 +18,8 @@ router.get('/signup', allControl.signup)
 
 router.get('/contact', allControl.contact)
 
+router.get('/market', allControl.market)
+
 
 
 

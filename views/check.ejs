@@ -9,18 +9,9 @@
         <%- include('./partials/nav.ejs') %> 
        
 
-</header>
-        <section class="image-c">
-           
-                <div class="text">
-                    <h2>Carrot & Orange Smoothie</h2>
-                    <button><a href="#">View Menu</a></button>
-                </div>
-           
-        </section>
-        
-  
 
+        
+        
     <section>
         <div class="tag">
             <button type="submit">All Recipes</button>
@@ -29,19 +20,22 @@
 
 
         <div class="content">
-            <button type="submit">Top Recipes</button>
+            <button type="submit">Recipes</button>
 
             <div class="container">
 
                 
-                    <% if (recipes.length > 0) { %>
-                     <% recipes.forEach(recipe => { %>
+                    <% if (docs.length > 0) { %>
+                     <% docs.forEach(doc => { %>
                       
                         <div class="cards">
-                    <img src="/uploads/foodImage<%= recipe.foodImage %> " alt="pic">
+                            <a href="/get/<%= doc._id %> "> 
+                    <img src="/uploads/foodImage<%= doc.foodImage %> " alt="pic">
 
-                    <h2><%= recipe.recipeName %> </h2>
-                    <p><%= recipe.cookName %> </p>
+                    <h2><%= doc.recipeName %> </h2>
+                    <p><%= doc.cookName %> </p>
+
+                </a>
                 </div>
 
                 
@@ -56,22 +50,7 @@
         </div>
     </section>
 
-    <section class="last-content">
-        <div class="text2">
-            <h2>Categories</h2>
-        </div>
-
-        <div class="lower-btn">
-            <button type="submit"><a href=""></a> BreakFast</button>
-            <button type="submit">Lunch</button>
-            <button type="submit">Supper</button>
-            <button type="submit">Dessert</button>
-            <button type="submit">Juice</button>
-            <button type="submit">Low Calories</button>
-            
-        </div>
-    </section>
-
+</header> 
 
    <%- include('./partials/footer.ejs') %> 
 

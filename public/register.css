@@ -116,7 +116,11 @@ input:focus{
     list-style-type: none;
 }
 
-.success ul{
+.success a:hover{
+    color: #af272e;
+}
+
+.success ul li{
     list-style-type: none;
 }
 

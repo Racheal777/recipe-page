@@ -32,6 +32,10 @@ const contact =  (req, res) => {
     res.render('call', {title :"Contact Us"})
 }
 
+const market =  (req, res) => {
+    res.render('market', {title :"Market"})
+}
+
 
 
 //exporting module
@@ -42,6 +46,7 @@ module.exports = {
     recipe,
     login,
     signup,
-    contact
+    contact,
+    market
 
 }

@@ -5,6 +5,7 @@ const dotenv = require('dotenv').config()
 const allRoute = require('./routes/allRoute')
 const recipeR = require('./routes/recipeR')
 const register = require('./routes/signups')
+const categoryRoute = require('./routes/categoryRout')
 
 const PORT = process.env.PORT || 9000
 
@@ -36,6 +37,7 @@ app.use(express.urlencoded({extended:true}))
 app.use(allRoute)
 app.use(recipeR)
 app.use(register)
+app.use(categoryRoute)
 
 
 

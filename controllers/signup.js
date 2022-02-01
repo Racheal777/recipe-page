@@ -1,5 +1,6 @@
 const mongoose = require('mongoose')
 const multer = require('multer')
+const recipe = require('../model/recipe')
 const recipeR = require('../routes/recipeR')
 const register = require('../model/register')
 const express = require('express')
@@ -43,7 +44,21 @@ const fetchData = (req, res) =>{
 const fetchOne = (req, res) =>{
     register.findById(req.params.id)
     .then((results) =>{
-        if(results) res.render('profile', {title:"Chef Profile", info:results})
+
+        if(results) {
+
+            console.log(results.cookName)
+            recipe.find({cookName: results.cookName }).then((success) =>{
+            res.render('profile',
+             {
+                 title:"Chef Profile", 
+                 info:results,
+                 names:success
+            })
+        
+        })
+    }
+        
     }).catch((err) => {
         console.log(err)
     })
