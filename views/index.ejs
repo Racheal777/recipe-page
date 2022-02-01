@@ -12,15 +12,26 @@
         <%- include('./partials/nav.ejs') %> 
        
 
-    
-        <!-- <section class="image-c">
-           
+            <div class="space">
+
+
+            </div>
+        
+            <div>
+                <form id="formzz" action="/">
+                    <input type="text" name="text" placeholder="Search here">
+                    <i id="iconz" class="fa fa-search" aria-hidden="true"></i>
+            
+                </form>
+            </div>
+
+
                 <div class="text">
-                    <h2>Carrot & Orange Smoothie</h2>
-                    <button><a href="/get/">View Menu</a></button>
+                    <h2>Satisfy your taste with <span> cookIT</span> </h2>
+                    
                 </div>
            
-        </section> -->
+       
         
   
 
@@ -32,7 +43,7 @@
 
 
         <div class="content">
-            <button type="submit">Top Recipes</button>
+            <button type="submit">New Recipes</button>
 
             <div class="container">
 
@@ -65,6 +76,45 @@
             <button type="submit"><a href="/">View More</a> </button>
             
         </div>
+
+
+
+
+        <div class="content">
+            <button type="submit">Popular Recipes</button>
+
+            <div class="container">
+
+                
+                    <% if (recipes.length > 0) { %>
+                     <% recipes.forEach(recipe => { %>
+                      
+                        <div class="cards">
+                            <a href="/get/<%= recipe._id %> "> 
+                    <img src="/uploads/foodImage<%= recipe.foodImage %> " alt="pic">
+
+                    <h2><%= recipe.recipeName %> </h2>
+                    <p><%= recipe.cookName %> </p>
+                </a>
+
+                </div>
+
+                
+                    <% }) %>
+                    <% }  else { %>  
+                        <p><%= "No posts to display currently" %> </p>
+            
+                        <% } %>  %> 
+                
+    
+              </div>  
+        </div>
+
+        <div class="tag">
+            <button type="submit"><a href="/">View More</a> </button>
+            
+        </div>
+
 
     </section>
 

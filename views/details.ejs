@@ -10,8 +10,7 @@
 
         <%- include('./partials/nav.ejs') %> 
 
-<div><i id="iconss" class="fa fa-heart"></i>
-</div>
+        <div><i id="iconss" class="fa fa-heart"></i></div>
     <main>
         <div> <img src="/uploads/foodImage<%= recipeData.foodImage %> " alt="pic"></div>
 
@@ -75,7 +74,7 @@
         </section>
 
         
-        </main>
+    
 
         <div class="tag">
             <button id="tags" type="submit">comment </button>
@@ -84,14 +83,12 @@
 
         <section id="commentss">
             <div id="cardzz">
-                <h2>Racheal</h2>
-                <p>Recipe looks great, i will try it</p>
+                <a href="/gett/<%= recipeData._id %> "> 
+                <h2><%= recipeData.name %> </h2>
+                <p><%= recipeData.message %> </p>
+                </a>
             </div>
 
-            <div id="cardzz">
-                <h2>Racheal</h2>
-                <p>Recipe looks great, i will try it</p>
-            </div>
         </section>
 
 
@@ -111,7 +108,7 @@
                 <form id="form-input" action="/comment" method ="post">
                     <input type="text" name="name" id="name" placeholder="FullName" required>
                     <textarea title="message" name="message" placeholder="write here" required></textarea>
-                    <label> Your overall experience with us ?</label><br>
+                    <label> Your rating?</label><br>
         
                     <span class="star-rating">
                     <input type="radio" name="rating1" value="1"><i class="fa-regular fa-star"></i>
@@ -129,7 +126,7 @@
                 </form>
             </div>
 
-
+        </main>
 
     </section>
 

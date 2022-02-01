@@ -37,6 +37,7 @@ const userSchema = new Schema({
         type:String
     }
     
+    
 }, {timestamps: true}, )
 
 //creating the model and assigning the schema to it

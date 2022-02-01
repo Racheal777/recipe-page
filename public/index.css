@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Quintessential&family=Roboto:wght@300&display=swap');
+
+
 *{
     margin: 0;
     padding: 0;
@@ -21,10 +24,15 @@ header{
 
 .logo li a {
     color: #c3363e;
-    font-family: fantasy;
-    font-size: 1.4em;
+    font-family: 'Quintessential', cursive;
+    /* font-family: 'Roboto', sans-serif; */
+    font-size: 1.6em;
     font-weight: bold;
     letter-spacing: 3px;
+    border-radius: 40%;
+    background-color: #8a9898;
+    box-shadow: 5px 5px 7px #252929,
+                -5px -5px 7px #adc4c4;
 }
 
 nav{
@@ -35,6 +43,7 @@ nav{
     width: 100%;
     padding: 19px 6px;
     color: white;
+    align-items: center;
     
     /* background-color: rgb(247, 248, 246); */
     /* box-shadow: 3px 2px 3px rgb(31, 31, 23),
@@ -56,6 +65,7 @@ nav a{
     text-decoration: none;
     /* color: #c3363e; */
     color: white;
+    text-align: center;
 }
 
 nav a:hover{
@@ -70,8 +80,8 @@ nav a:hover{
     position: absolute;
     color: #c3363e;
     font-weight: bold;
-    left: 85%;
-    top: 20%;
+    left: 90%;
+    top: 27%;
 }
 
 #icon{
@@ -86,11 +96,139 @@ nav a:hover{
     gap: 1em;
 
 }
+.login{
+    padding: 6px 15px;
+    background-color:#c3363e ;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 0.8em;
+    /* width: 10%; */
+}
 
-/* .log .login{
-    background-color: #2b4727;
+ .login:hover{
+    color: #cc3f50;
+    background-color: #8a9898;
 
+}
+.space{
+    background-color: #f2f3f4;
+    width: 100%;
+    height: 12vh;
+    position: relative;
+    
+}
+
+
+
+/* .dropdown {
+    float: left;
+    overflow: hidden;
+  } */
+  
+  /* .dropdown .dropbtn {
+    font-size: 1.3em;  
+    
+  } */
+  
+  /* .navbar a:hover, .dropdown:hover .dropbtn {
+    background-color: rgb(221, 45, 69);
+  } */
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #8a9898;
+    min-width: 160px;
+    z-index: 1;
+  }
+  
+  .dropdown-content a {
+   
+    color: white;
+    padding: 6px 8px;
+    text-decoration: none;
+    display: block;
+    
+  }
+  
+  .dropdown-content a:hover {
+    background-color: #ddd;
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  
+#formzz {
+    position: absolute;
+    left: 25%;
+    /* top: 50%; */
+width: 40%;
+border-radius: 10px;
+background-color: #8a9898;
+margin:  -2em auto;
+
+}
+
+#formzz input{
+    background-color: #8a9898;
+    padding: 0.7em;
+    width: 90%;
+    border-bottom: none;
+}
+/* .text{
+    margin: 2em auto;
+    font-size: 2em;
+    text-align: center;
+    color: white;
+    transition: 2s;
+    animation: draw 1.2s linear 3.2s forwards;
+    animation-name: fadeIn;
 } */
+
+
+.text{
+    margin: 2em 9em;
+    text-transform: capitalize;
+  background-image: linear-gradient(
+    -225deg,
+    #6ddeece3 0%,
+    #f7fbfcee 29%,
+    #da3543e0 67%,
+    #58aaaad5 100%
+  );
+  background-size: auto auto;
+  background-clip: border-box;
+  background-size: 50% auto;
+  color: #fff;
+  background-clip: text;
+  /* text-fill-color: transparent; */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textclip 3s linear infinite;
+  /* display: inline-block; */
+      font-size: 30px;
+}
+
+@keyframes textclip {
+  to {
+    background-position: 200% center;
+  }
+}
+
+  /* @keyframes fadeIn {
+    
+    from {opacity: 0; transform: rotate(45deg);}
+    to {opacity: 1}
+  } */
+
+
+.text span{
+    color: #97252a;
+    font-family: cursive;
+    font-weight: bold;
+}
 
 .tag{
     display: flex;
@@ -157,6 +295,12 @@ nav a:hover{
     padding: 0.4em;
     border-radius: 10px;
     text-align: center;
+    transition: 1s transform;
+}
+
+.cards:hover{
+    transform: scale(0.9);
+    border-radius: 10px;
 }
 .cards p{
     padding: 10px 7px;
@@ -181,8 +325,7 @@ nav a:hover{
     text-align: center;
     border: none;
     margin: 0.7em auto;
-    box-shadow: 3px 3px 4px rgb(117, 117, 3),
-                -3px -3px 4px rgb(34, 34, 32);  
+     
 }
 
 .last-content{

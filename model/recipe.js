@@ -53,7 +53,19 @@ const recipeSchema = new Schema({
 
     foodImage : {
         type: String
+    },
+
+    name : {
+        type:String
+    },
+
+    message : {
+        type: [String]
+    },
+    rating1 : {
+        type:Number
     }
+    
 }, {timestamps: true}, )
 
 //creating the model and assigning the schema to it
