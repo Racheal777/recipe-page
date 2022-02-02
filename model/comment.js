@@ -3,17 +3,7 @@ const mongoose = require('mongoose')
 const{Schema} = mongoose
 
 const commentSchema = new Schema({
-    recipeName : {
-        type: String,
-        // required: true
-    },
-
-    cookName : {
-        type:String,
-        // required: true,
-        lowercase: true
-
-    },
+    
     name : {
         type:String
     },
@@ -24,7 +14,12 @@ const commentSchema = new Schema({
 
     rating1 : {
         type: Number
-    }
+    },
+
+    recipy : [
+        {type: mongoose.Schema.Types.ObjectId,ref:'recipe'}
+    ]
+
 }, {timestamps: true}, )
 
 //creating the model and assigning the schema to it

@@ -12,20 +12,16 @@ const userSchema = new Schema({
         type:String,
         // required: true,
         lowercase: true
-
     },
 
     email : {
         type:String,
         // required: true,
         lowercase: true
-
     },
 
     userName : {
-        type:String,
-        
-        
+        type:String,    
     },
 
     password: {
@@ -37,7 +33,7 @@ const userSchema = new Schema({
         type:String
     }
     
-    
+
 }, {timestamps: true}, )
 
 //creating the model and assigning the schema to it

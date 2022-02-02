@@ -4,46 +4,20 @@ const mongoose = require('mongoose')
 const multer = require('multer')
 const recipeR = require('../routes/recipeR')
 const recipe = require('../model/recipe')
-const comment = require('../model/comment')
+
 const express = require('express')
 
 
-
-
-// Kitten.findOne(
-//     // query
-//     {color: "white", name: "Dr. Miffles", age: 1},
-
-//     // Only return an object with the "name" and "owner" fields. "_id" 
-//     // is included by default, so you'll need to remove it if you don't want it.
-//     {name: true, owner: true},
-
-//     // callback function
-//     (err, kitten) => {
-//         if (err) return res.status(200).send(err)
-//         return res.status(200).send(kitten)
-//     }
-// );
-
-//fetching the Categories from the database
-//reversing the data to show the most recent
-// const getCategory =  (req, res) => {
-//     recipe.findOne({category:"breakfast"}).then((results) =>{
-//         if(results) res.render('check', {title:  "Breakfast", info:results})
-//     }).catch((err) =>{
-//         console.log(err)
-//     })
-    
-// }
-
-
+//fetching data based on categories
 const breakfast = (req, res) =>{
     recipe.find({category: "breakfast" }).then((results) =>{
+        console.log(results)
         if(results) res.render("check",{title:"Breakfast", docs:results} );
     }).catch((err) =>{
         if (err){
             console.log(err)
         }
+        
     })
         
     };

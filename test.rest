@@ -1,0 +1,25 @@
+GET  http://localhost:9000/me
+Content-Type: application/json
+       
+    {
+        "recipeName": "ricewater", 
+        "cookName": "Will", 
+        "email": "will@gmail.com",
+        "level" : "easy", 
+        "category": "lunch", 
+        "time": "01:00pm",
+        "ingredients" : "corndough",
+        "instruction": "Cook it" ,
+        "com"  :[{
+        "name"    : "Rich",
+        "message" : "great food",
+        "rating1" : 4   
+        } ]
+    }
+
+   
+ 
+    
+            
+
+
