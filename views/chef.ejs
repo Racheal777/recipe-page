@@ -8,42 +8,29 @@
         
         <%- include('./partials/nav.ejs') %> 
        
-
-
-        <section class="chef">
-           
-                
-           
-        </section>
-        
   
-
     <section>
        
+        <div class="content">
+            <button type="submit">CHEFS</button>
 
+            <div class="container2">
 
-        <div class="contentt">
-            <button type="submit">Chefs</button>
-
-            <div class="contentz">
-
-                
                     <% if (signup.length > 0) { %>
                      <% signup.forEach(profile => { %>
                       
-                        <div class="list">
+                        <div class="cards">
                     
-                            <a href="/chef/<%= profile._id %> "> 
-                    <h2><%= profile.firstName %> </h2>
-                    <p><%= profile.email %> </p>
-
-                </div>
-
-            </a>
+                            <a href="/chef/<%= profile._id %> ">
+                                <img src="/avatar/avatar<%= profile.avatar %> " alt="pic"> 
+                            <h2><%= profile.firstName %> </h2>
+                            <p><%= profile.email %> </p>
+                        </a>
+                        </div>
 
                 
-                    <% }) %>
-                    <% }  else { %>  
+                        <% }) %>
+                        <% }  else { %>  
                         <p><%= "No chefs to display currently" %> </p>
             
                         <% } %>  %> 

@@ -50,18 +50,16 @@ const recipeSchema = new Schema({
     foodImage : {
         type: String
     },
-    com: [
-        {
-            type: Schema.Types.ObjectId,
-            ref: "comment"
-        }   
-    ]
+
+    register_id : String,
      
     
     
 }, {timestamps: true}, )
 
-
+//adding index to the schema to enable a search on it
+recipeSchema.index({recipeName: 'text', cookName: 'text'})
+// recipeSchema.index({'$**': 'text'});
 //creating the model and assigning the schema to it
 const recipe = mongoose.model('recipe', recipeSchema)
 

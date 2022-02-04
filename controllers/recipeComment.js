@@ -5,82 +5,81 @@ const mongoose = require('mongoose')
 const multer = require('multer')
 const recipeR = require('../routes/recipeR')
 const recipe = require('../model/recipe')
-const comment = require('../model/comment')
+const Comment = require('../model/comment')
 const express = require('express')
 
 
 
 
+//Saving comments to the database
+const saveCom = (req, res) =>{
+    const id = req.params.recipeId
 
+    console.log(id)
 
-
-
-
-
-
-
-
-
-
-
-// //fetching the COMMENTS from the database
-// //reversing the data to show the most recent
-// const getOneComment =  (req, res) => {
-//     comment.findById(req.params.id).then((results) => {
-//         if(results) {
-//             // const reversed = results.reverse()
-//             res.render("index", {title: "details", recipeData : results})
-//         }
-//     }).catch((err) =>{
-//         console.log(err)
-//     })
-//     // res.render('forms', {title : "Recipe Form"})
-// }
-
-
-
-const saveMe = (req, res) => {
-    const recipes = new recipe({
-        recipeName : req.body.recipeName, 
-        cookName : req.body.cookName, 
-        email : req.body.email,
-        level : req.body.level, 
-        category : req.body.category, 
-        time : req.body.time,
-        ingredients : req.body.ingredients,
-        instruction: req.body.instruction,
-        foodImage : req.file.originalname
+    const comments = new Comment(req.body)
+    comments.save().then(results =>{
+        if(results)
+        res.redirect(`/get/${id}`)
     })
-    recipes.save().then(results => {
+    console.log(comments)
+}
 
-        const comments = new comment({
-            name: req.body.name,
-            message: req.body.message,
-            rating1: req.body.rating1,
-            recipy : [recipes._id]
-        })
-        console.log(req.body)
 
-        comments.save().then(doc => {
-            res.render('success', {title: "Success",comments, recipes})
+//get
 
-        })
-    }).catch(err => {
-        res.json({error: err.message})
+const findRec = (req, res) =>{
+    recipe.findById(req.params.id).then(result =>{
+        if(result){
+            console.log(result.id)
+
+            Comment.find({'recipe_id':result.id}).then(doc =>{
+                console.log(doc)
+                // res.send(result)
+                res.render('details', 
+                {title: "Details",
+                recipeData: result,
+                review:doc,
+                
+            })
+            
+            
+            })
+            
+        }
     })
 }
 
-const get = (req, res) => {
-    comment.find().populate('recipy').exec((err, doc) => {
-        if(err) throw err
-        res.send(doc)
-    })
-}
+
+
+
+
+
+
+
+
+
+const get = (req, res) =>{
+            Comment.find({"recipe_id": req.params.id}).then(doc =>{
+                console.log(Comment)
+                res.send(doc)
+                // res.render('details', 
+                // {title: "Details",
+                // recipeData: result,
+                // review:success,
+                
+            })
+            
+            
+            // })
+            
+        }
+
+
 
 
 module.exports = {
-    // saveComment,
-    // getComment,
+    saveCom,
     get,
-    saveMe,
+   findRec
 }

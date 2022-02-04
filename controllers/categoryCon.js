@@ -10,7 +10,9 @@ const express = require('express')
 
 //fetching data based on categories
 const breakfast = (req, res) =>{
-    recipe.find({category: "breakfast" }).then((results) =>{
+    // const cname = req.params.cat
+
+    recipe.find({category:"breakfast"}).then((results) =>{
         console.log(results)
         if(results) res.render("check",{title:"Breakfast", docs:results} );
     }).catch((err) =>{

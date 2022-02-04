@@ -16,13 +16,19 @@ const commentSchema = new Schema({
         type: Number
     },
 
-    recipy : [
-        {type: mongoose.Schema.Types.ObjectId,ref:'recipe'}
-    ]
+    recipe_id :
+    {
+        type: String
+    } 
+
+
+    // recipy : [
+    //     {type: mongoose.Schema.Types.ObjectId,ref:'recipe'}
+    // ]
 
 }, {timestamps: true}, )
 
 //creating the model and assigning the schema to it
-const comment = mongoose.model('comment', commentSchema)
+const Comment = mongoose.model('Comment', commentSchema)
 
-module.exports = comment
+module.exports = Comment

@@ -1,18 +1,29 @@
-// const tag = document.getElementById('tags')
 
-// tag.addEventListener('click',showPage )
-document.getElementById("tags").addEventListener("click", showPage);
+    //function to display data
+    const forms = document.getElementById('formzz')
+    const search = document.querySelector('#search')
+        
 
-function showPage(){
-    var x = document.getElementById("contactss")
-    if(x.style.display === "none"){
-        x.style.display ="block";
-    }else{
-        x.style.display = "none"
-    }
-    console.log(x)
 
-    // tag.classList.add('.contactss')
-    // console.log(showPage)
-}
+    forms.addEventListener("submit", (e) => {
+
+        const tag = search.value
+
+        console.log(tag)
+        const endpoint = `/search/${tag}`
+        e.preventDefault()
+
+        console.log(endpoint)
+        fetch(endpoint, {
+            method: "GET"
+        }).then(result => result.json())
+        
+        .then(res => window.location.href = 'http://localhost:9000/search')
+        console.log(fetch)
+    }).catch(err => console.log(err))
+
+
+
+
+
 

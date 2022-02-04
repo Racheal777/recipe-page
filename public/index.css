@@ -25,7 +25,6 @@ header{
 .logo li a {
     color: #c3363e;
     font-family: 'Quintessential', cursive;
-    /* font-family: 'Roboto', sans-serif; */
     font-size: 1.6em;
     font-weight: bold;
     letter-spacing: 3px;
@@ -44,11 +43,6 @@ nav{
     padding: 19px 6px;
     color: white;
     align-items: center;
-    
-    /* background-color: rgb(247, 248, 246); */
-    /* box-shadow: 3px 2px 3px rgb(31, 31, 23),
-                -3px -2px 3px rgb(37, 37, 37); 
-    */
 }
 
 nav ul{
@@ -121,20 +115,7 @@ nav a:hover{
 
 
 
-/* .dropdown {
-    float: left;
-    overflow: hidden;
-  } */
-  
-  /* .dropdown .dropbtn {
-    font-size: 1.3em;  
-    
-  } */
-  
-  /* .navbar a:hover, .dropdown:hover .dropbtn {
-    background-color: rgb(221, 45, 69);
-  } */
-  
+
   .dropdown-content {
     display: none;
     position: absolute;
@@ -177,15 +158,6 @@ margin:  -2em auto;
     width: 90%;
     border-bottom: none;
 }
-/* .text{
-    margin: 2em auto;
-    font-size: 2em;
-    text-align: center;
-    color: white;
-    transition: 2s;
-    animation: draw 1.2s linear 3.2s forwards;
-    animation-name: fadeIn;
-} */
 
 
 .text{
@@ -217,11 +189,6 @@ margin:  -2em auto;
   }
 }
 
-  /* @keyframes fadeIn {
-    
-    from {opacity: 0; transform: rotate(45deg);}
-    to {opacity: 1}
-  } */
 
 
 .text span{
@@ -258,7 +225,7 @@ margin:  -2em auto;
     color: black;
 }
 .content{
-    background-color: rgba(158, 184, 184, 0.493);
+    background-color: rgba(158, 184, 184, 0.411);
     width: 90%;
     border-radius: 3em;
     margin: 1em auto;
@@ -275,16 +242,12 @@ margin:  -2em auto;
     font-size: 1em;
     border: none;
     margin: 1.3em 2em;
-    /* box-shadow: 3px 3px 3px rgb(117, 117, 3),
-                -3px -3px 3px rgb(34, 34, 32);   */
 }
 .container{
     width: 95%;
     margin: auto;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    /* grid-template-rows: repeat(2, 1fr); */
-    /* grid-column-gap: 35px; */
     grid-row-gap: 38px;  
 
 }

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('./partials/head.ejs') %> 
+
+
+<body>
+    <header>
+        
+        <%- include('./partials/nav.ejs') %> 
+       
+
+
+        
+        
+    <section>
+        <div class="tag">
+            <button type="submit">All Recipes</button>
+            <button type="submit"><i class="fa fa-plus" aria-hidden="true"></i><a href="/form">Add New Recipes</a></button>
+        </div>
+
+
+        <div class="content" id="main">
+            <button type="submit">Recipes</button>
+
+            <div class="container">
+
+                
+                    <% if (searches.length > 0) { %>
+                     <% searches.forEach(doc => { %>
+                      
+                        <div class="cards">
+                            <a href="/get/<%= doc._id %>"> 
+                    <img src="/uploads/foodImage<%= doc.foodImage %>" alt="pic">
+
+                    <h2><%= doc.recipeName %> </h2>
+                    <p><%= doc.cookName %> </p>
+
+                </a>
+                </div>
+
+                
+                    <% }) %>
+                    <% }  else { %>  
+                        <p><%= "No posts to display currently" %> </p>
+            
+                        <% } %>  %> 
+                
+    
+              </div>  
+        </div>
+    </section>
+
+</header> 
+
+   <%- include('./partials/footer.ejs') %> 
+
+   <script src="../site.js"></script>
+    <!-- <script src="../sittes.js"></script> -->
+    
+</body>
+</html>

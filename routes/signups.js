@@ -28,7 +28,7 @@ const avatar = multer({storage})
 //adding the variable name to the post request
 //rendering the signup
 //adding avatar.single with the name of the file in the form
-router.post('/signup',avatar.single("avatar"), signup.signup)
+router.post('/signup/:userId',avatar.single("avatar"), signup.signup)
 
 router.get('/chef', signup.fetchData)
 

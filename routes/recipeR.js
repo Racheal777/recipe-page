@@ -2,6 +2,7 @@ const express = require('express')
 const recipeCon = require('../controllers/recipeCon')
 const comments = require('../controllers/recipeComment')
 const multer = require('multer')
+const search = require('../controllers/searchC')
 
 
 const router = express.Router()
@@ -26,28 +27,33 @@ const upload = multer({storage})
 //rendering files
 
 //adding the variable name to the post request
-// router.post('/post', upload.single('foodImage'), recipeCon.saveData)
+ router.post('/post', upload.single('foodImage'), recipeCon.saveData)
 
-// router.post('/comment', recipeCon.saveComment)
 
-// router.get('/get', recipeCon.getComment )
 
 // router.get('/gett/:id', recipeCon.getOneComment )
 
 router.get('/', recipeCon.getData )
 
-router.get('/get/:id', recipeCon.getOneData )
+router.get('/all', recipeCon.getAllDatas )
 
-router.get('/fetch', recipeCon.getResults)
 
-router.get('/pull', recipeCon.saveDat)
+router.get('/allData', recipeCon.getAllData)
 
-// router.post('/com',comments.saveComment)
+// router.get('/get/:id', recipeCon.getOneData )
 
-// router.get('/get',comments.getComment)
+// router.get('/fetch', recipeCon.getResults)
 
-router.get('/getComment',comments.get)
+router.post('/com/:recipeId', comments.saveCom)
 
-router.post('/post',upload.single('foodImage'), comments.saveMe)
+router.get('/get/:id', comments.findRec)
+
+
+
+router.get('/comment',comments.get)
+
+ router.get('/search/:searchTag', search.findIt)
+
+// router.get('/search/:searchTag', search.SearchIt)
 
 module.exports = router;

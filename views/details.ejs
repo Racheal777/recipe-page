@@ -59,16 +59,33 @@
 
         <section class="allIngre">
             <div class="ingre">
-                <ol>
-                    <li><%= recipeData.ingredients%> </li>
-                </ol>
+                
+                <% recipeData.ingredients.forEach(Data => { %>
+                    <% Data.split(',').forEach(b => { %> 
+                        <li><%= b %> </li>
+                        <% }) %>
+                <% }) %>
+                
+                
                 <!-- console.log(recipeData.ingredients) -->
                
             </div>
 
             <div class="instru">
-                <ol>
-                    <li><%= recipeData.instruction %> </li>
+                
+                    
+                    <% recipeData.instruction.forEach(Data => { %>
+                        <% Data.split(',').forEach(b => { %>
+                            <ol>
+                            <li><%= b %> </li>
+                        </ol> 
+                            <% }) %>
+                    <% }) %>
+
+
+                     
+                   
+                    
                 </ol>
             </div>
         </section>
@@ -81,18 +98,45 @@
             
         </div> 
 
-        <section id="commentss">
-            <div id="cardzz">
-                <a href="/gett/<%= recipeData._id %> "> 
-                <h2><%= recipeData.name %> </h2>
-                <p><%= recipeData.message %> </p>
-                </a>
-            </div>
 
+
+        <section id="commentss">
+            <h2>All reviews</h2>
+                <div class="cardzz">
+                    
+                    <% if (review.length > 0) {%> 
+                        <% review.reverse().forEach(rev => { %> 
+                            <div class="rev-details">
+                                <h3><%= rev.name %> </h3>
+                                <br>
+                                <p><%= rev.message %> </p>
+                                
+                                
+                            
+
+                            <div class="ratingss">
+                                <% let stars = rev.rating1 %> 
+                                <% console.log(stars) %>
+                                <% for( let i = 0; i < stars; i++ ) { %>
+                                    <i class="fas fa-star"></i>
+                                <% } %> 
+                            </div>
+
+                        </div>
+                        <% }) %> 
+
+                        <% }  else { %>  
+                            <p><%= "No reviews to display currently" %> </p>
+                
+                            <% } %>   
+                    
+                </div>
         </section>
 
 
-        <section id="contactss">
+
+
+        <section class="" id="conts">
             
             <div id="contact">
                 <h3>Reviews: 
@@ -104,23 +148,32 @@
                 </div>
                 <div id="container-form">
 
-                <h3>Reviews</h3>
-                <form id="form-input" action="/post" method ="post" enctype="multipart/form-data">
+                
+                <form id="form-input" action="/com/<%= recipeData._id %>" method ="post">
                     <input type="text" name="name" id="name" placeholder="FullName" required>
                     <textarea title="message" name="message" placeholder="write here" required></textarea>
                     <label> Your rating?</label><br>
         
-                    <span class="star-rating">
+                    <!-- <span class="star-rating">
                     <input type="radio" name="rating1" value="1"><i class="fa-regular fa-star"></i>
                     <input type="radio" name="rating1" value="2"><i class="fa-regular fa-star"></i>
                     <input type="radio" name="rating1" value="3"><i class="fa-regular fa-star"></i>
                     <input type="radio" name="rating1" value="4"><i class="fa-regular fa-star"></i>
                     <input type="radio" name="rating1" value="5"><i class="fa-regular fa-star"></i>
-                    </span>
+                    </span> -->
+
+                    <select id="star-rating" name="rating1">
+                        <option value="1">1 star</option>
+                        <option value="2">2 stars</option>
+                        <option value="3">3 stars</option>
+                        <option value="4">4 stars</option>
+                        <option value="5">5 stars</option>
+                        
+                      </select>
 
                 </br>
                 
-
+                    <input type="text" style="visibility: hidden;"name="recipe_id" value="<%=recipeData._id %>">
                     <button type="submit" value="Submit"> Send </button>
 
                 </form>
@@ -137,7 +190,8 @@
         <p>Designed by Racheal</p>
     </footer>
 
-    <script src="../site.js"></script>
+    <!-- <script src="../site.js"></script> -->
+    <script src="../sittes.js"></script>
 </body>
 </html>
 

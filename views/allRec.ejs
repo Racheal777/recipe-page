@@ -18,8 +18,8 @@
             </div>
         
             <div>
-                <form id="formzz" action="/search/${tag}" method="">
-                    <input type="text" id="search" name="text" placeholder="Search here">
+                <form id="formzz" action="/">
+                    <input type="text" name="text" placeholder="Search here">
                     <i id="iconz" class="fa fa-search" aria-hidden="true"></i>
             
                 </form>
@@ -38,56 +38,18 @@
     <section>
         <div class="tag">
             <button type="submit"><a href="/all">All Recipes</a> </button>
-            <button type="submit"><i class="fa fa-plus" aria-hidden="true"></i><a href="/form">Add New Recipes</a></button>
+            
         </div>
 
 
         <div class="content">
-            <button type="submit">New Recipes</button>
+            <!-- <button type="submit">New Recipes</button> -->
 
             <div class="container">
 
                 
                     <% if (recipes.length > 0) { %>
                         
-                     <% recipes.slice(0, 4).forEach(recipe => { %>
-                      
-                        <div class="cards">
-                            <a href="/get/<%= recipe._id %> "> 
-                    <img src="/uploads/foodImage<%= recipe.foodImage %> " alt="pic">
-
-                    <h2><%= recipe.recipeName %> </h2>
-                    <p><%= recipe.cookName %> </p>
-                </a>
-
-                </div>
-
-                
-                    <% }) %>
-                    <% }  else { %>  
-                        <p><%= "No posts to display currently" %> </p>
-            
-                        <% } %>  %> 
-                
-    
-              </div>  
-        </div>
-
-        <div class="tag">
-            <button type="submit"><a href="/all">View More</a> </button>
-            
-        </div>
-
-
-
-
-        <div class="content">
-            <button type="submit">Popular Recipes</button>
-
-            <div class="container">
-
-                
-                    <% if (recipes.length > 0) { %>
                      <% recipes.forEach(recipe => { %>
                       
                         <div class="cards">
@@ -117,15 +79,18 @@
         </div>
 
 
+
+
+        
+
     </section>
 
     
 
+
 </header>
    <%- include('./partials/footer.ejs') %> 
 
-   <script src="../site.js"></script>
-   <script src="../sittes.js"></script>
-
+    
 </body>
 </html>

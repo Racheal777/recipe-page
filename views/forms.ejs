@@ -38,7 +38,7 @@
             <label for="">Category</label>
             <select id="category" name="category">
                 <option value="breakfast">Breakfast</option>
-                <option value="Lunch">Lunch</option>
+                <option value="lunch">Lunch</option>
                 <option value="supper">Supper</option>
                 <option value="dessert">Dessert</option>
                 <option value="snack">Snack</option>
@@ -58,19 +58,21 @@
               </select></div>
 
               <div class="full">
-            <label for="">Ingredients</label>
-            <textarea name="ingredients" id="" cols="30" rows="10"></textarea>
+            <label for="">Ingredients *add , after every item</label>
+            <textarea name="ingredients" id="" cols="30" rows="10" placeholder="rice, milk"></textarea>
         </div>
 
             <div class="full">
-            <label for="">Instruction</label>
-            <textarea name="instruction" id="" cols="30" rows="10"></textarea>
+            <label for="">Instruction *add , after every step</label>
+            <textarea name="instruction" id="" cols="30" rows="10" placeholder="add water,add beans,"></textarea>
         </div>
 
             <div class="full">
             <input type="file" name="foodImage" id="" placeholder="Upload Image">
         </div>
 
+        <input type="text" style="visibility: hidden;" name="recipe_id" value="">
+        
             <div class="full">
             <button type="submit" value="Submit">Save Recipe</button></div>
 

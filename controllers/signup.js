@@ -7,6 +7,8 @@ const express = require('express')
 
 
 const signup = (req, res) =>{
+    const id = req.params.userId
+    console.log(id)
     const{firstName, lastName, email, userName, password} = req.body
 
     const addUser = {
@@ -20,6 +22,7 @@ const signup = (req, res) =>{
 
     const user = new register(addUser)
     user.save().then((result) => {
+        
         if(result){
             // const alpha = result
          res.render('success')
@@ -28,6 +31,7 @@ const signup = (req, res) =>{
     }).catch((err) => {
         res.send(err.message)
     })
+    console.log(user)
 }
 
 
@@ -44,11 +48,12 @@ const fetchData = (req, res) =>{
 const fetchOne = (req, res) =>{
     register.findById(req.params.id)
     .then((results) =>{
-
+        console.log(results.id)
         if(results) {
 
-            console.log(results.cookName)
-            recipe.find({cookName: results.cookName }).then((success) =>{
+            const names = register._id
+            console.log(names)
+            recipe.find({"cookName":"yasira"}).then((success) =>{
             res.render('profile',
              {
                  title:"Chef Profile", 

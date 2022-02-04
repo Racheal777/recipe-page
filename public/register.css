@@ -34,12 +34,17 @@ a:hover{
 }
 
 #login-container{
-    background-color: rgba(179, 209, 209, 0.61);
+    backdrop-filter: blur(16px) saturate(37%);
+    -webkit-backdrop-filter: blur(16px) saturate(37%);
+    background-color: rgba(130, 167, 165, 0.418);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.125);
+    /* background-color: rgba(134, 163, 163, 0.61); */
    
     /* box-shadow: 2px 3px 2px 3px rgb(37, 21, 20); */
     color: white;
     padding: 3.2em;
-    margin: 2em auto;
+    margin: 3em auto;
     width: 40%;
     border-radius: 3px;
     align-content: center;
@@ -103,10 +108,13 @@ input:focus{
 
 .contentss{
     font-size: 2em;
-    background-color: #38cae4a8;
-    border-radius: 10px;
-    padding: 1.5em;
-    margin: 2em 5em;
+    background-color: #96b9be;
+    background-image: 
+        radial-gradient(at 47% 33%, hsl(196.00, 9%, 59%) 0, transparent 59%), 
+        radial-gradient(at 82% 65%, rgb(125, 174, 184) 0, transparent 55%);
+    border-radius: 5px; 
+    padding: 1em;
+    margin: 3em 5em;
     text-align: center;
     color: white;
 }

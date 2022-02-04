@@ -25,17 +25,18 @@ const saveData =  (req, res) => {
         time,
         ingredients,
         instruction,
+        
         foodImage : req.file.originalname
     }
     //creating an instance of the schema
-    const recipes = new recipe(req.body)
+    const recipes = new recipe(addRecipe)
 
     //saving data to the database
     recipes.save().then(results => {
             if(results)
             
             res.render('success', {title: "Success", recipe,})
-            // res.json({message:"Record saved", recipe,})
+            
     }).catch(err =>{
         console.log(err)
     })  
@@ -53,7 +54,7 @@ const getOneData =  (req, res) => {
     }).catch((err) =>{
         console.log(err)
     })
-    // res.render('forms', {title : "Recipe Form"})
+    
 }
 
 
@@ -73,73 +74,36 @@ const getData =  (req, res) => {
     // res.render('forms', {title : "Recipe Form"})
 }
 
-const getResults = (req, res) => {
-    comment.find().exec((err, doc) => {
-        if(err) throw err
-        res.send(doc)
-    })
 
-    
-}
-
-
-
-
-
-
-
-
-
-
-
-//callbacks for the route activity
-const saveDat =  (req, res) => {
-
-    //destructuring the objects in the model
-    const{recipeName, cookName, email, level, category, time,
-        ingredients, instruction} = req.body;
-
-        //declaring a variable to pass the object
-    const addRecipe = {
-        recipeName, 
-        cookName, 
-        email,
-        level, 
-        category, 
-        time,
-        ingredients,
-        instruction,
-        foodImage : req.file.originalname
-    }
-
-    //creating an instance of the schema
-    const recipes = new recipe(addRecipe)
-
-    //saving data to the database
-    recipes.save().then(results => {
-        const comments = new comment({
-            name    : req.body.name,
-            message : req.body.message,
-            rating1 : req.body.rating1,
-            recipes : recipe._id
-        })
-
-        comments.save().then(success =>{
-            // if(results)
-            
-            // res.render('success', {title: "Success", recipe, comment})
-            res.json({message:"Record saved", recipe, comment})
-        })
-      
-    }).catch(err =>{
+//fetching the All data from the database
+//reversing the data to show the most recent
+const getAllData =  (req, res) => {
+    recipe.find().then((results) => {
+        if(results) {
+            const reversed = results.reverse()
+            //res.render("allRec", {title: "All Recipes", recipes : reversed})
+            res.send(results)
+        }
+    }).catch((err) =>{
         console.log(err)
-    })  
+    })
+    // res.render('forms', {title : "Recipe Form"})
 }
 
-
-
-
-
+//fetching the All data from the database
+//reversing the data to show the most recent
+const getAllDatas =  (req, res) => {
+    recipe.find().then((results) => {
+        if(results) {
+            const reversed = results.reverse()
+            res.render("allRec", {title: "All Recipes", recipes : reversed})
+            // res.send(results)
+        }
+    }).catch((err) =>{
+        console.log(err)
+    })
+    // res.render('forms', {title : "Recipe Form"})
+}
 
 
 
@@ -149,9 +113,11 @@ const saveDat =  (req, res) => {
 module.exports = {
     saveData,
     getData,
+    getAllData,
+    getAllDatas,
     getOneData,
-    getResults,
-    saveDat
+    
+    
    
 
 }
