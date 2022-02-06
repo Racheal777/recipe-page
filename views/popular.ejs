@@ -12,18 +12,7 @@
         <%- include('./partials/nav.ejs') %> 
        
 
-            <div class="space">
-
-
-            </div>
-        
-            <div>
-                <form id="formzz" action="/search/${tag}" method="">
-                    <input type="text" id="search" name="text" placeholder="Search here">
-                    <i id="iconz" class="fa fa-search" aria-hidden="true"></i>
             
-                </form>
-            </div>
 
 
                 <div class="text">
@@ -48,9 +37,9 @@
             <div class="container">
 
                 
-                    <% if (recipes.length > 0) { %>
+                    <% if (review.length > 0) { %>
                         
-                     <% recipes.slice(0, 4).forEach(recipe => { %>
+                     <% review.forEach(recipe => { %>
                       
                         <div class="cards">
                             <a href="/get/<%= recipe._id %> "> 
@@ -58,6 +47,7 @@
 
                     <h2><%= recipe.recipeName %> </h2>
                     <p><%= recipe.cookName %> </p>
+                    
                 </a>
 
                 </div>
@@ -79,24 +69,18 @@
         </div>
 
 
+
+
+        
     </section>
 
 
 </header>
 
 <article>
-            <h2>About Us</h2>
-            <div class="about">
-            <div class="picss">
-                <img src="images/imag5.jpg" alt="pic" srcset="">
-            </div>
-            <div class="textBox">
-                <h2>We Bring your Fantasies alive</h2>
-                <p>CookIT is here to save you the hustle<br>
-                Get inspired and cook at ease
-            </p></div>
-        </div>
-    
+    <div class="about">
+
+    </div>
 </article>
    <%- include('./partials/footer.ejs') %> 
 

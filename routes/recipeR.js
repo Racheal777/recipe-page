@@ -52,7 +52,9 @@ router.get('/get/:id', comments.findRec)
 
 router.get('/comment',comments.get)
 
- router.get('/search/:searchTag', search.findIt)
+router.get('/search/:searchTag', search.findIt)
+
+router.get('/like', comments.mostLikes)
 
 // router.get('/search/:searchTag', search.SearchIt)
 

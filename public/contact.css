@@ -1,4 +1,14 @@
+#contacts{
+  display: flex;
+  width: 90%;
+  margin: 9em auto;
 
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  background-color: rgba(126, 160, 160, 0.75);
+  border-radius: 12px;
+  border: 1px solid rgba(111, 140, 141, 0.3);
+}
 
 
 #conts{
