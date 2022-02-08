@@ -7,6 +7,9 @@ const recipeR = require('./routes/recipeR')
 const register = require('./routes/signups')
 const categoryRoute = require('./routes/categoryRout')
 const cors = require('cors')
+const cookieParser = require('cookie-parser')
+
+
 
 const PORT = process.env.PORT || 9000
 
@@ -35,6 +38,7 @@ app.use(express.json())
 app.use(express.urlencoded({extended:true}))
 // app.use(cors)
 app.use(cors())
+app.use(cookieParser()) //cookies
 
 //using the module
 app.use(allRoute)

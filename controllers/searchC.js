@@ -17,6 +17,7 @@ const SearchIt = (req, res) => {
         result => {
             if(result) 
             res.render('search', {title: "Search Results", searches:result})
+            console.log(result)
         }).catch(err => {
             console.log(err)
         })
@@ -35,6 +36,20 @@ const findIt = (req, res) =>{
 
 }
 
+const search = (req, res) => {
+    const tagg = req.params.tagg;
+    console.log(tagg)
+
+    recipe.find({$text: {$search: `${tagg}`, $caseSensitive:false}}).exec(function(
+        err, result) {
+            if(err) throw err
+            if(result){
+                console.log(result)
+                res.render('search', {title: "Search Results", searches:result})
+            }
+        })
+}
+
 
 
 
@@ -49,5 +64,6 @@ const findIt = (req, res) =>{
 module.exports = {
    
     SearchIt,
-    findIt
+    findIt,
+    search
 }

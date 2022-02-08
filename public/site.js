@@ -6,19 +6,19 @@
 
 
     forms.addEventListener("submit", (e) => {
+        e.preventDefault()
 
         const tag = search.value
 
         console.log(tag)
         const endpoint = `/search/${tag}`
-        e.preventDefault()
-
+        
         console.log(endpoint)
         fetch(endpoint, {
             method: "GET"
         }).then(result => result.json())
         
-        .then(res => window.location.href = 'http://localhost:9000/search')
+        .then(res => window.location.href = `/search/${tag}`)
         console.log(fetch)
     }).catch(err => console.log(err))
 

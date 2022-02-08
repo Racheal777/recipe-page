@@ -13,5 +13,7 @@ btn.addEventListener('click', () => {
     form.style.display = 'block';
   }
 
-  console.log(form)
+  // console.log(form)
 });
+
+

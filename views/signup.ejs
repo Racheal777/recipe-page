@@ -17,16 +17,29 @@
                     <!-- <h3>Register</h3> -->
                     <h2>Get Started.</h2> 
                     <span>Already have an Account <a href="/login">LogIn</a></h4></span><br>
+                    <br>
                     
-                    
-                    <form id="form-input" action="/signup" method="post" enctype="multipart/form-data">
+                    <form id="form-input" method="post" action="/signup" enctype="multipart/form-data">
+                        <label>FirstName</label>
                         <input type="text" placeholder="FirstName" name="firstName">
+
+                        <label>LastName</label>
                         <input type="text" placeholder="LastName" name="lastName">
+
+                        <label>Email</label>
                         <input type="email" placeholder="Email" name="email">
+
+                        <label>Username</label>
                         <input type="text" placeholder="Username" name="userName">
+
+                        <label>Password</label>
                         <input type="password" placeholder="Password" name="password">
 
-                        
+                        <label>Confirm Password</label>
+
+                        <input type="password" placeholder=" Confirm Password" name="passwords">
+
+                        <label>Upload profile Picture</label>
                             <input type="file" name="avatar" id="" placeholder="Upload Image">
                         
                         <button type="submit" value="Submit">SignUp</button>
@@ -43,6 +56,6 @@
             </section>
 
 </header>
-    <script src="../index.js"></script>
+<!-- <script src="../login.js"></script> -->
 </body>
 </html>

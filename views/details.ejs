@@ -12,7 +12,7 @@
 
         <div><i id="iconss" class="fa fa-heart"></i></div>
     <main>
-        <div> <img src="/uploads/foodImage<%= recipeData.foodImage %> " alt="pic"></div>
+         <img src="/uploads/foodImage<%= recipeData.foodImage %> " alt="pic">
 
 
 
@@ -116,7 +116,7 @@
 
                             <div class="ratingss">
                                 <% let stars = rev.rating1 %> 
-                                <% console.log(stars) %>
+                                
                                 <% for( let i = 0; i < stars; i++ ) { %>
                                     <i class="fas fa-star"></i>
                                 <% } %> 
@@ -154,13 +154,7 @@
                     <textarea title="message" name="message" placeholder="write here" required></textarea>
                     <label> Your rating?</label><br>
         
-                    <!-- <span class="star-rating">
-                    <input type="radio" name="rating1" value="1"><i class="fa-regular fa-star"></i>
-                    <input type="radio" name="rating1" value="2"><i class="fa-regular fa-star"></i>
-                    <input type="radio" name="rating1" value="3"><i class="fa-regular fa-star"></i>
-                    <input type="radio" name="rating1" value="4"><i class="fa-regular fa-star"></i>
-                    <input type="radio" name="rating1" value="5"><i class="fa-regular fa-star"></i>
-                    </span> -->
+                
 
                     <select id="star-rating" name="rating1">
                         <option value="1">1 star</option>

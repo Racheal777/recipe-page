@@ -4,19 +4,24 @@ const recipe = require('../model/recipe')
 const recipeR = require('../routes/recipeR')
 const register = require('../model/register')
 const express = require('express')
+const bcrypt = require('bcrypt')
+const cookieParser = require('cookie-parser')
 
 
 const signup = (req, res) =>{
     const id = req.params.userId
     console.log(id)
     const{firstName, lastName, email, userName, password} = req.body
+    // hashing password
+    // const salt = await bcrypt.genSalt();
+    // const hashedPassword = await bcrypt.hash(password, salt)
 
     const addUser = {
         firstName,
         lastName,
         email,
         userName,
-        password,
+        password ,
         avatar : req.file.originalname
     }
 
@@ -25,7 +30,7 @@ const signup = (req, res) =>{
         
         if(result){
             // const alpha = result
-         res.render('success')
+         res.render('success', {title: "Success"})
 
         }
     }).catch((err) => {
@@ -70,11 +75,23 @@ const fetchOne = (req, res) =>{
 }
 
 
+//setting cookies
+const cookies = (req, res) =>{
+    res.cookie('admin', "Hellofirstcookie", {maxAge: 3*24*60*60, httpOnly:true})
+    res.json({message : " Cookies has been set"})
+}
 
+
+//getting cookies
+// const Getcookies = (req, res) =>{
+//     res.cookie('admin', "Hellofirstcookie")
+//     res.json({message : " Cookies has been set"})
+// }
 
 
 module.exports = {
     signup,
     fetchData,
-    fetchOne
+    fetchOne,
+    cookies,
 }

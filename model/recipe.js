@@ -5,11 +5,13 @@ const{Schema} = mongoose
 const recipeSchema = new Schema({
     recipeName : {
         type: String,
+        
         // required: true
     },
 
     cookName : {
         type:String,
+       
         // required: true,
         lowercase: true
 
@@ -18,7 +20,8 @@ const recipeSchema = new Schema({
     email : {
         type:String,
         // required: true,
-        lowercase: true
+        lowercase: true,
+        
 
     },
     level : {
@@ -58,8 +61,8 @@ const recipeSchema = new Schema({
 }, {timestamps: true}, )
 
 //adding index to the schema to enable a search on it
-recipeSchema.index({recipeName: 'text', cookName: 'text'})
-// recipeSchema.index({'$**': 'text'});
+// recipeSchema.index({recipeName: 'text', cookName: 'text'})
+ recipeSchema.index({'$**': 'text'});
 //creating the model and assigning the schema to it
 const recipe = mongoose.model('recipe', recipeSchema)
 

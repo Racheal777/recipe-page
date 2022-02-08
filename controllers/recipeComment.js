@@ -74,26 +74,26 @@ const get = (req, res) =>{
         }
 
 // finding the most likes
-const mostLikes = (req, res) =>{
-    recipe.find().then(result =>{
-        if(result){
-            console.log(result)
+// const mostLikes = (req, res) =>{
+//     recipe.find().then(result =>{
+//         if(result){
+//             console.log(result)
 
-            Comment.find({ "rating1": 4}).then(doc =>{
-                console.log(doc)
-                // res.send(result)
-                res.render('popular', 
-                {title: "popular",
-                recipeData: result,
-                review:doc,
+//             Comment.find({ "rating1": 4}).then(doc =>{
+//                 console.log(doc)
+//                 // res.send(result)
+//                 res.render('popular', 
+//                 {title: "popular",
+//                 recipeData: result,
+//                 review:doc,
                 
-            })
-            })
+//             })
+//             })
             
-        }
-    }) 
+//         }
+//     }) 
                 
-        }
+//         }
     
 
 
@@ -102,5 +102,5 @@ module.exports = {
     saveCom,
     get,
    findRec,
-   mostLikes
+//    mostLikes
 }
