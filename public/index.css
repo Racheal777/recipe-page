@@ -38,7 +38,7 @@ nav{
     
     display: flex;
     justify-content: space-around;
-    font-size: 1.5em;
+    font-size: 1.3em;
     width: 100%;
     padding: 19px 6px;
     color: white;
@@ -49,7 +49,7 @@ nav ul{
     display: flex;
     justify-content: center;
     list-style-type: none;
-    gap: 1.5em;
+    gap: 1.3em;
     
 }
 
@@ -88,15 +88,17 @@ nav a:hover{
     list-style-type: none;
     display: flex;
     gap: 1em;
+    font-size: 1em;
 
 }
 .login{
-    padding: 6px 15px;
+    padding: 1px 15px;
     background-color:#c3363e ;
     color: white;
     border: none;
-    border-radius: 10px;
+    border-radius: 5px;
     font-size: 0.8em;
+    
     /* width: 10%; */
 }
 
@@ -161,34 +163,41 @@ margin:  -2em auto;
 
 
 .text{
-    margin: 2em 9em;
+    margin: 2em 10em;
     text-transform: capitalize;
   background-image: linear-gradient(
     -225deg,
     #6ddeece3 0%,
-    #f7fbfcee 29%,
+    #cfdcdfee 29%,
     #da3543e0 67%,
-    #58aaaad5 100%
+    #7ed1d1d5 100%
   );
   background-size: auto auto;
   background-clip: border-box;
   background-size: 50% auto;
-  color: #fff;
+  /* color: #fff; */
   background-clip: text;
   /* text-fill-color: transparent; */
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation: textclip 3s linear infinite;
+  animation: textclip 2s linear ;
   /* display: inline-block; */
       font-size: 30px;
+      font-weight: bold;
 }
 
 @keyframes textclip {
   to {
     background-position: 200% center;
+    color: #c3363e;
   }
 }
 
+.new{
+    padding: 1em;
+    color: #eef5f5;
+    font-weight: bold;
+}
 
 
 .text span{
@@ -361,6 +370,9 @@ article {
     
 }
 
+/* .about-page{
+    background-color: #8a9898c5;
+} */
 .about{
     display: flex;
     gap: 1em;

@@ -55,7 +55,7 @@
   
   
   .ratingss{
-      
+      text-align: right;
       font-weight: bold;
       color: rgb(228, 146, 23);
       margin-top: 0.6em;
@@ -63,7 +63,7 @@
   }
   
   .rev-details{
-      text-align: center;
+      text-align: left;
       color: black;
       width: 90%;
       display: block;
@@ -72,7 +72,7 @@
       margin: 1em auto;
       backdrop-filter: blur(16px) saturate(180%);
       -webkit-backdrop-filter: blur(16px) saturate(180%);
-      background-color: rgba(226, 245, 245, 0.75);
+      background-color: rgba(171, 212, 212, 0.75);
       border-radius: 12px;
       border: 1px solid rgba(209, 213, 219, 0.3);
       /* box-shadow: 5px 5px 10px rgba(81, 95, 95, 0.493),
@@ -269,10 +269,10 @@
     margin:  3em 4em;
     width: 90%;
     color: white;
-    background-color: #96b9be;
+    background-color: rgba(158, 184, 184, 0.493);
     background-image: 
-        radial-gradient(at 47% 33%, hsl(196.00, 9%, 59%) 0, transparent 59%), 
-        radial-gradient(at 82% 65%, rgb(125, 174, 184) 0, transparent 55%);
+        radial-gradient(at 47% 33%, rgb(116, 143, 153) 0, transparent 59%), 
+        radial-gradient(at 82% 65%, rgb(115, 152, 160) 0, transparent 55%);
     border-radius: 5px; 
     padding: 1em;
     
@@ -280,6 +280,7 @@
  }
 
  #cardzz{
+     display: flex;
     width: 90%;
     background-color: #c3363dec;
     padding: 0.4em;
