@@ -36,6 +36,10 @@ const market =  (req, res) => {
     res.render('market', {title :"Market"})
 }
 
+const chef =  (req, res) => {
+    res.render('chef', {title :"Chef"})
+}
+
 
 
 //exporting module
@@ -47,6 +51,7 @@ module.exports = {
     login,
     signup,
     contact,
-    market
+    market,
+    chef
 
 }

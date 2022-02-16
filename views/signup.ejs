@@ -19,28 +19,23 @@
                     <span>Already have an Account <a href="/login">LogIn</a></h4></span><br>
                     <br>
                     
-                    <form id="form-input" method="post" action="/signup" enctype="multipart/form-data">
-                        <label>FirstName</label>
-                        <input type="text" placeholder="FirstName" name="firstName">
-
-                        <label>LastName</label>
-                        <input type="text" placeholder="LastName" name="lastName">
+                    <form id="form-input">
+                        <label>FullName</label>
+                        <input type="text" placeholder="Name" name="fullName" required>
 
                         <label>Email</label>
-                        <input type="email" placeholder="Email" name="email">
-
-                        <label>Username</label>
-                        <input type="text" placeholder="Username" name="userName">
+                        <input type="email" placeholder="Email" name="email" required>
+                        <div id="email-el"></div>
 
                         <label>Password</label>
-                        <input type="password" placeholder="Password" name="password">
+                        <input type="password" placeholder="Password" name="password" required>
+                        <div id="password-el"></div>
 
                         <label>Confirm Password</label>
 
                         <input type="password" placeholder=" Confirm Password" name="passwords">
 
-                        <label>Upload profile Picture</label>
-                            <input type="file" name="avatar" id="" placeholder="Upload Image">
+                    
                         
                         <button type="submit" value="Submit">SignUp</button>
                         <!-- <p class="text">Have an account? <a href="/login">Log In</a> </p> -->
@@ -56,6 +51,8 @@
             </section>
 
 </header>
+
+<script src="../js/signup.js"></script>
 <!-- <script src="../login.js"></script> -->
 </body>
 </html>

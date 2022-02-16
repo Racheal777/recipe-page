@@ -51,12 +51,40 @@ const search = (req, res) => {
 }
 
 
+const searches = (req, res, next) =>{
+    //find all recipes
+    recipe.find().exec().then(results =>{
 
+        //after grab the keys of the object with the query user enter
+        if(Object.keys(req.query).length){
 
-// recipe.find({recipeName: { $regex: "k", $options: "i" } }, function(err, docs) {
-//     console.log("Partial Search Begins");
-//     console.log(docs);
-//     });
+            //filter the results which is now in an array 
+            //check if the search word is either in the recipe name,
+            //cookname or category
+            const render = results.filter(result => 
+                result.recipeName.includes(req.query.search) || 
+                result.cookName.includes(req.query.search) || 
+                result.category.includes(req.query.search))
+
+                console.log(render)
+
+                //check if there is a query all
+                //if there is one then you render the results
+                if(render.length){
+                    res.render('search', {title: "Home", recip: render})
+                    next()
+                }else{
+                    res.render("notFound", {title:"Not Found"})
+                }
+               
+
+        }else{
+            res.json({message: "recipe not found"})
+        }
+    }).catch(err => {
+        console.log(err)
+    })
+}
 
 
 
@@ -65,5 +93,7 @@ module.exports = {
    
     SearchIt,
     findIt,
-    search
+    search,
+    searches
+
 }

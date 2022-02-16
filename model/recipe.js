@@ -5,6 +5,7 @@ const{Schema} = mongoose
 const recipeSchema = new Schema({
     recipeName : {
         type: String,
+        lowercase: true
         
         // required: true
     },
@@ -38,6 +39,7 @@ const recipeSchema = new Schema({
     category : {
         type:String,
         enum: ["breakfast", "lunch", "supper", "dessert", "snack", "drink"],
+        lowercase:true
         // required: true,   
     },
 
@@ -54,8 +56,16 @@ const recipeSchema = new Schema({
         type: String
     },
 
-    register_id : String,
+     comment_id : {
+         type: String
+     },
      
+     comment: [
+        {
+            type: Schema.Types.ObjectId,
+            ref: "Comment"
+        }   
+    ]
     
     
 }, {timestamps: true}, )

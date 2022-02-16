@@ -73,28 +73,28 @@ const get = (req, res) =>{
             
         }
 
-// finding the most likes
-// const mostLikes = (req, res) =>{
-//     recipe.find().then(result =>{
-//         if(result){
-//             console.log(result)
+//comment with most likes
 
-//             Comment.find({ "rating1": 4}).then(doc =>{
-//                 console.log(doc)
-//                 // res.send(result)
-//                 res.render('popular', 
-//                 {title: "popular",
-//                 recipeData: result,
-//                 review:doc,
-                
-//             })
-//             })
-            
-//         }
-//     }) 
-                
-//         }
+const popular = (req, res) =>{
+    recipe.find().exec().then(resultss => {
+
+        Comment.find().exec().then(results =>{
+            const each = Object.keys(resultss).forEach(recs => recs.comment)
+
+            console.log(each)
+            const pop =  results.filter(result => result.rating1 > 3)
+     
+            res.render('popular', {title: "HomePage", pops:pop, recip: resultss})
+            // console.log(pop)
+            // console.log(resultss)
+
+
+         }).catch(err => {
+             console.log(err)
+         })
+    })
     
+}
 
 
 
@@ -102,5 +102,6 @@ module.exports = {
     saveCom,
     get,
    findRec,
+   popular,
 //    mostLikes
 }

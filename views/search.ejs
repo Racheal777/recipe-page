@@ -9,7 +9,18 @@
         <%- include('./partials/nav.ejs') %> 
        
 
+        <div class="space">
 
+
+        </div>
+    
+        <div>
+            <form id="formzz" action="" method="">
+                <input type="text" id="search" name="text" placeholder="Search here">
+                <i id="iconz" class="fa fa-search" aria-hidden="true"></i>
+        
+            </form>
+        </div>
         
         
     <section>
@@ -25,8 +36,8 @@
             <div class="container">
 
                 
-                    <% if (searches.length > 0) { %>
-                     <% searches.forEach(doc => { %>
+                    <% if (recip.length > 0) { %>
+                     <% recip.forEach(doc => { %>
                       
                         <div class="cards">
                             <a href="/get/<%= doc._id %>"> 

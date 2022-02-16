@@ -19,8 +19,14 @@ const commentSchema = new Schema({
     recipe_id :
     {
         type: String
-    } 
+    },
 
+    recip: [
+        {
+            type: Schema.Types.ObjectId,
+            ref: "recipe"
+        }   
+    ]
 
     // recipy : [
     //     {type: mongoose.Schema.Types.ObjectId,ref:'recipe'}

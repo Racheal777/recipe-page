@@ -26,7 +26,7 @@
 
     <section>
         <div class="tag">
-            <button type="submit"><a href="/all">All Recipes</a> </button>
+            <button type="submit"><a href="/all">Popular Recipes</a> </button>
             <button type="submit"><i class="fa fa-plus" aria-hidden="true"></i><a href="/form">Add New Recipes</a></button>
         </div>
 
@@ -37,16 +37,18 @@
             <div class="container">
 
                 
-                    <% if (review.length > 0) { %>
+                    <% if (pops.length > 0) { %>
                         
-                     <% review.forEach(recipe => { %>
+                     <% pops.forEach(recipe => { %>
                       
                         <div class="cards">
                             <a href="/get/<%= recipe._id %> "> 
                     <img src="/uploads/foodImage<%= recipe.foodImage %> " alt="pic">
 
-                    <h2><%= recipe.recipeName %> </h2>
-                    <p><%= recipe.cookName %> </p>
+                    <h2><%= recipe.name %> </h2>
+                    <p><%= recipe.recipe_id %> </p>
+                    <p><%= recipe.message %> </p>
+                    <p><%= recipe.rating1%> </p>
                     
                 </a>
 

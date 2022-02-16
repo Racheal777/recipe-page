@@ -1,97 +1,101 @@
-const mongoose = require('mongoose')
-const multer = require('multer')
-const recipe = require('../model/recipe')
-const recipeR = require('../routes/recipeR')
-const register = require('../model/register')
+//requiring all modules
 const express = require('express')
-const bcrypt = require('bcrypt')
-const cookieParser = require('cookie-parser')
+const register = require('../model/register')
+// const cookieParser = require("cookie-parser");
+const bcrypt = require("bcrypt");
 
+// const generateToken = require('../helpers/userHelper')
+const { handleErrors, generateToken } = require("../helpers/userHelper");
 
-const signup = (req, res) =>{
-    const id = req.params.userId
-    console.log(id)
-    const{firstName, lastName, email, userName, password} = req.body
-    // hashing password
-    // const salt = await bcrypt.genSalt();
-    // const hashedPassword = await bcrypt.hash(password, salt)
+const{authUser, getUser, logout} = require('../middleware/authUser')
 
-    const addUser = {
-        firstName,
-        lastName,
-        email,
-        userName,
-        password ,
-        avatar : req.file.originalname
+//signup
+
+const signup = async (req, res) =>{
+    const{fullName, email, password} = req.body
+try {
+   
+    
+    const newUser = new register({fullName, email, password})
+     
+    const User = await newUser.save()
+
+    if(User){
+       //using the token
+       const token = generateToken(User._id) 
+
+       //set cookies
+       res.cookie('jwt', token, {maxAge: 3 * 24 * 60 * 60, httpOnly:true})
+
+       //send our data
+       res.status(201).json({User})
     }
 
-    const user = new register(addUser)
-    user.save().then((result) => {
-        
-        if(result){
-            // const alpha = result
-         res.render('success', {title: "Success"})
+} catch (error) {
+    //declaring a variable and assigning it to the handle errors 
+    //we had it the helper folder
+     const errors = handleErrors(error);
+    console.log(errors)
+    res.json({errors});
+}
+}
+    
 
+
+
+//login 
+const login = async (req, res) =>{
+    const{ email, password} = req.body
+    
+    try {
+
+        const user = await register.findOne({email})
+
+        console.log(user)
+
+        //compare password and hash the one the user is entering and 
+        //compare with the one in the database
+
+        
+        if(user){
+            const isSame = await bcrypt.compare(password, user.password);
+            //const isSame = await bcrypt.compare(password, user.password)
+
+            console.log(isSame)
+
+            if(isSame){
+                //using the token
+             const token = generateToken(user._id) 
+      
+             //set cookies
+             res.cookie('jwt', token, {maxAge: 7 * 24 * 60 * 60, httpOnly:true})  
+              
+             res.status(201).json({user})  
+            
+            }else{
+                res.json({error: "Password Incorrect"})
+            }
+
+            //send our data
+       
+        }else{
+            res.json({error: "Email not found, Signup"})
         }
-    }).catch((err) => {
-        res.send(err.message)
-    })
-    console.log(user)
-}
 
-
-const fetchData = (req, res) =>{
-    register.find()
-    .sort('-1')
-    .then((results) =>{
-        if(results) res.render('chef', {title:"Chef", signup:results})
-    }).catch((err) => {
-        console.log(err)
-    })
-}
-
-const fetchOne = (req, res) =>{
-    register.findById(req.params.id)
-    .then((results) =>{
-        console.log(results.id)
-        if(results) {
-
-            const names = register._id
-            console.log(names)
-            recipe.find({"cookName":"yasira"}).then((success) =>{
-            res.render('profile',
-             {
-                 title:"Chef Profile", 
-                 info:results,
-                 names:success
-            })
         
-        })
+    } catch (error) {
+        //declaring a variable and assigning it to the handle errors 
+    //we had it the helper folder
+     const errors = handleErrors(error);
+     console.log(errors)
+     res.json({errors});
     }
-        
-    }).catch((err) => {
-        console.log(err)
-    })
 }
 
-
-//setting cookies
-const cookies = (req, res) =>{
-    res.cookie('admin', "Hellofirstcookie", {maxAge: 3*24*60*60, httpOnly:true})
-    res.json({message : " Cookies has been set"})
-}
-
-
-//getting cookies
-// const Getcookies = (req, res) =>{
-//     res.cookie('admin', "Hellofirstcookie")
-//     res.json({message : " Cookies has been set"})
-// }
 
 
 module.exports = {
     signup,
-    fetchData,
-    fetchOne,
-    cookies,
+     login
+
 }
