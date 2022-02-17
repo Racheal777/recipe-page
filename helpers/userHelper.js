@@ -16,10 +16,15 @@ module.exports.generateToken = (id) =>{
 module.exports.handleErrors = (err) => {
 
   //if email and password is empty, it means no error
-   let errors = { email: "", password: "" };
+   let errors = { email: "",userName:"", password: "" };
 
+   //if email has already been taken, 
   if (err.code === 11000) {
     errors.email = "Email already exist please Login";
+  }
+
+  if (err.code === 11000) {
+    errors.userName = "Username already exist please Login";
   }
   // To check if err.message contains user validation failed
   if (err.message.includes("User validation failed")) {

@@ -4,9 +4,8 @@ const express = require('express')
 
 
 //callbacks for the route activity
-// const home =  (req, res) => {
-//     res.render('index', {title :"HomePage"})
-// }
+
+
 
 const form =  (req, res) => {
     res.render('forms', {title :"Recipe Form"})
@@ -44,7 +43,7 @@ const chef =  (req, res) => {
 
 //exporting module
 module.exports = {
-    // home,
+      
     form,
     profile,
     recipe,
@@ -52,6 +51,7 @@ module.exports = {
     signup,
     contact,
     market,
-    chef
+    chef,
+    
 
 }

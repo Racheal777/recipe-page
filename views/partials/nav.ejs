@@ -4,11 +4,11 @@
    
 <nav>
   
-    <div class="logo"><li><a href="/">cookIT</a></li></div>
+    <div class="logo"><li><a href="/home">cookIT</a></li></div>
+
     <ul>
-        <li><a href="/">Home</a></li>
-        <!-- <li><a href="/chef">Chef</a></li> -->
-        <!-- <li><a href="/profile">About</a></li> -->
+        <li><a href="/home">Home</a></li>
+        
         <li><a href="/contact">Contact Us</a></li>
 
         <li><a href="/market">Market</a></li>
@@ -18,7 +18,7 @@
         
         
         <div class="dropdown">
-            <li class="dropbtn"><a href="#">Category   <i class="fa fa-caret-down"></i></a>
+            <li class="dropbtn"><a href="#">Category <i class="fa fa-caret-down"></i></a>
              
             </li>
             <div class="dropdown-content">
@@ -35,32 +35,60 @@
 
     
      
+
+        
     
-     <% if (user) { %>
-        <div>
-            <p><%= user.fullName %>  </p>  
-        </div>
+       <!-- <div class="log">
+            <li class="sign"><a href="/signup">Register</a></li>
+            <button class="login"><a href="/login">Login</a></button>
+            
+            
+        </div> 
+    
+        
 
         <div class="log">
             
             <button class="login"><a href="/logout">Logout</a></button>
            
         </div>
-     <% }else{ %>
-      
-        <div class="log">
-            <li class="sign"><a href="/signup">Register</a></li>
-            <button class="login"><a href="/login">Login</a></button>
-            
-            
-        </div> 
-    <%}%>
-        
-     
-       
 
        
-            
+        
+     -->
+        <% if (user) { %>
+           
+   
+           <!-- <div class="log">
+               
+               <button class="login"><a href="/logout">Logout</a></button>
+              
+           </div> -->
+           <div class="prof">
+            <li class="dropbtn"><a href="#">User <i class="fa fa-caret-down"></i></a>
+             
+            </li>
+            <div class="prof-content">
+                <p>signed-in as <span><%= user.userName %> </span></p>
+              
+              <a href="/lunch">Your Profile</a>
+              <a href="/lunch">Your Recipes</a>
+              
+
+              <a class="logout" href="/logout">Logout</a>
+              
+            </div>
+          </div> 
+        <% }else{ %>
+         
+           <div class="log">
+               <li class="sign"><a href="/signup">Register</a></li>
+               <button class="login"><a href="/login">Login</a></button>
+               
+               
+           </div> 
+       <%}%>
+        
        
     
      

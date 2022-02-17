@@ -37,12 +37,14 @@ const upload = multer({storage})
 
 // router.get('/gett/:id', recipeCon.getOneComment )
 
- router.get('/', recipeCon.getData )
+ router.get('/', recipeCon.getAll )
+
+ router.get('/home', recipeCon.getData)
 
 router.get('/all', recipeCon.getAllDatas )
 
 
-router.get('/allData', recipeCon.getAllData)
+// router.get('/allData', recipeCon.getAllData)
 
 // router.get('/get/:id', recipeCon.getOneData )
 
@@ -52,13 +54,15 @@ router.post('/com/:recipeId', comments.saveCom)
 
 router.get('/get/:id', comments.findRec)
 
-
-
 router.get('/comment',comments.get)
 
 router.get('/popular',comments.popular)
 
 router.get('/search', search.searches)
+
+
+
+
 
 router.post('/create/:id', newControl.create);
 router.post('/populate/:id',newControl.userByPost);

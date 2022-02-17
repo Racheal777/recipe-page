@@ -8,7 +8,11 @@ const{authUser, getUser} = require('../middleware/authUser')
 const router = express.Router()
 
 //rendering files
-//  router.get('/', allControl.home)
+
+// router.get('/', allControl.home)
+
+// router.get('/home', allControl.userHome)
+
 router.get('*', getUser)
 
 router.get('/form',authUser, allControl.form)

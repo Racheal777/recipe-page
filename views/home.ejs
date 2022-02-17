@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('./partials/head.ejs') %>
+
+
+<body>
+    <header>
+
+        <nav>
+
+            <div class="logo">
+                <li><a href="/">cookIT</a></li>
+            </div>
+
+            <ul>
+                <li><a href="/">Home</a></li>
+
+                <li><a href="/contact">Contact Us</a></li>
+
+                <li><a href="/market">Market</a></li>
+
+                <li><a href="/popular">popular</a></li>
+
+
+
+                <div class="dropdown">
+                    <li class="dropbtn"><a href="#">Category <i class="fa fa-caret-down"></i></a>
+
+                    </li>
+                    <div class="dropdown-content">
+                        <a href="/breakfast">Breakfast</a>
+                        <a href="/lunch">Lunch</a>
+                        <a href="/supper">Supper</a>
+                        <a href="/dessert">Dessert</a>
+                        <a href="/snacks">Snack</a>
+                        <a href="/drink">Drink</a>
+                    </div>
+                </div>
+            </ul>
+
+
+
+            <div class="log">
+                <li class="sign"><a href="/signup">Register</a></li>
+                <button class="login"><a href="/login">Login</a></button>
+
+
+            </div>
+</nav>
+
+
+
+
+            <div class="space">
+
+
+            </div>
+
+
+            <div>
+                <form id="formzz" action="" method="">
+                    <input type="text" id="search" name="text" placeholder="Search here">
+                    <i id="iconz" class="fa fa-search" aria-hidden="true"></i>
+
+                </form>
+            </div>
+
+
+            <div class="text">
+                <h2>Satisfy your taste with <span> cookIT</span> </h2>
+
+            </div>
+
+
+
+
+
+            <section>
+
+
+
+                <div class="content">
+                    <h2 class="new">New Recipes</h2>
+
+
+
+                    <div class="container">
+
+
+                        <% if (recipes.length > 0) { %>
+
+                        <% recipes.slice(0, 4).forEach(recipe => { %>
+
+                        <div class="cards">
+                            <a href="/get/<%= recipe._id %> ">
+                                <img src="/uploads/foodImage<%= recipe.foodImage %> " alt="pic">
+
+                                <h2><%= recipe.recipeName %> </h2>
+                                <p><%= recipe.cookName %> </p>
+                            </a>
+
+                        </div>
+
+
+                        <% }) %>
+                        <% }  else { %>
+                        <p><%= "No posts to display currently" %> </p>
+
+                        <% } %> %>
+
+
+                    </div>
+                </div>
+
+                <div class="tag">
+                    <button type="submit"><a href="/all">View More</a> </button>
+                    <button type="submit"><i class="fa fa-plus" aria-hidden="true"></i><a href="/form">Add New
+                            Recipes</a></button>
+
+                </div>
+
+
+
+
+
+            </section>
+
+
+    </header>
+
+    <article class="about-page">
+        <h2>About Us</h2>
+        <div class="about">
+            <div class="picss">
+                <img src="images/imag5.jpg" alt="pic" srcset="">
+            </div>
+            <div class="textBox">
+                <h2>We Bring your Fantasies alive</h2>
+                <p>CookIT is here to save you the hustle<br>
+                    Get inspired and cook at ease
+                </p>
+            </div>
+        </div>
+
+    </article>
+
+
+    <%- include('./partials/footer.ejs') %>
+
+    <script src="../site.js"></script>
+    <!-- <script src="../sittes.js"></script> -->
+
+</body>
+
+</html>

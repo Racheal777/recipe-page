@@ -74,21 +74,23 @@ const getData =  (req, res) => {
     // res.render('forms', {title : "Recipe Form"})
 }
 
-
-//fetching the All data from the database
+//fetching the data from the database
 //reversing the data to show the most recent
-const getAllData =  (req, res) => {
+const getAll =  (req, res) => {
     recipe.find().then((results) => {
         if(results) {
             const reversed = results.reverse()
-            //res.render("allRec", {title: "All Recipes", recipes : reversed})
-            res.send(results)
+            res.render("home", {title: "Home", recipes : reversed})
         }
     }).catch((err) =>{
         console.log(err)
     })
     // res.render('forms', {title : "Recipe Form"})
 }
+
+
+
+
 
 //fetching the All data from the database
 //reversing the data to show the most recent
@@ -105,7 +107,7 @@ const getAllDatas =  (req, res) => {
     // res.render('forms', {title : "Recipe Form"})
 }
 
-//finding the most likes
+
 
 
 
@@ -113,7 +115,7 @@ const getAllDatas =  (req, res) => {
 module.exports = {
     saveData,
     getData,
-    getAllData,
+    getAll,
     getAllDatas,
     getOneData,
     

@@ -52,7 +52,16 @@ nav ul{
     gap: 1.3em;
     
 }
-
+.names{
+    text-align: center;
+    color: white;
+    font-family: cursive;
+    font-size: 2em;
+}
+.pro p{
+    font-weight: bold;
+    font-family: cursive;
+}
 nav a{
     display: flex;
     justify-content: center;
@@ -115,8 +124,52 @@ nav a:hover{
     
 }
 
+.prof-content {
+    display: none;
+    position: absolute;
+    background-color: #8a9898;
+    width: 125px;
+    z-index: 1;
+  }
+  
+  .prof-content a {
+   
+    color: white;
+    padding: 10px 6px;
+    text-decoration: none;
+    display: block;
+    
+  }
 
+  .prof-content p {
+   font-family: 'Times New Roman', Times, serif;
+    color: white;
+    padding: 12px 8px;
+    border-bottom: 1px solid black;
+    
+    
+  }
 
+  .logout{
+      border-top: 1px solid black;
+  }
+  .prof-content span {
+   
+    
+    font-weight: bold;
+    
+    
+    
+    
+  }
+  
+  .prof-content a:hover {
+    background-color: #ddd;
+  }
+  
+  .prof:hover .prof-content {
+    display: block;
+  }
 
   .dropdown-content {
     display: none;

@@ -34,7 +34,7 @@ form.addEventListener('submit', async (e) =>{
 
           
           if (data.user) {
-            location.assign("/");
+            location.assign("/home");
           }
         //   error handling on the client side 
 

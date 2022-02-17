@@ -12,11 +12,11 @@ const{authUser, getUser, logout} = require('../middleware/authUser')
 //signup
 
 const signup = async (req, res) =>{
-    const{fullName, email, password} = req.body
+    const{fullName,userName, email, password} = req.body
 try {
    
     
-    const newUser = new register({fullName, email, password})
+    const newUser = new register({fullName, email,userName, password})
      
     const User = await newUser.save()
 
@@ -68,7 +68,7 @@ const login = async (req, res) =>{
              const token = generateToken(user._id) 
       
              //set cookies
-             res.cookie('jwt', token, {maxAge: 7 * 24 * 60 * 60, httpOnly:true})  
+             res.cookie('jwt', token, {maxAge: 7 * 24 * 60 * 60 * 1000, httpOnly:true})  
               
              res.status(201).json({user})  
             
@@ -94,8 +94,8 @@ const login = async (req, res) =>{
 
 const loggingOut = (req, res) =>{
   //set cookies
-  res.cookie('jwt', 0, {maxAge: 0, httpOnly:true})
-      res.redirect('/login')
+  res.cookie('jwt', '', {maxAge: 0, httpOnly:true})
+      res.redirect('/')
   
     
               

@@ -14,39 +14,5 @@
         window.location.href = `http://localhost:9000/search?search=${tag}`
     })
 
-    // forms.addEventListener("submit", async (e) => {
-    //     e.preventDefault()
-
-    //     const tag = search.value
-
-    //     console.log(tag)
-    //     const endpoint = `http://localhost:9000/search?search=${tag}`
-        
-    //     console.log(endpoint)
-
-    //     try {
-            
-        
-    //     const response = await fetch(endpoint, {
-    //         method: "GET"
-    //     })
-    //     console.log(response);
-
-    //     const data = await response.json();
-    //     console.log(data)
-
-    //     if (data) {
-    //         window.location.href = endpoint;
-    //       }
-        
-    //     } catch (error) {
-    //         console.log(error)
-    //     } 
-    // })
-
-
-
-
-
-
+    
    

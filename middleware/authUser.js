@@ -59,6 +59,7 @@ module.exports.getUser =  (req, res, next)=>{
         })
     }else{
         res.locals.err = null
+        // res.redirect('/login')
         next()
 
     }
