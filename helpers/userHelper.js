@@ -22,7 +22,7 @@ module.exports.handleErrors = (err) => {
     errors.email = "Email already exist please Login";
   }
   // To check if err.message contains user validation failed
-  if (err.message.includes("user validation failed")) {
+  if (err.message.includes("User validation failed")) {
 
     //  console.log(err.message);
 

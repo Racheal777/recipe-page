@@ -8,8 +8,7 @@ const register = require('../model/register')
 module.exports.authUser = (req, res, next) =>{
     //assigning a variable to the cookie generated
       const token = req.cookies.jwt
-    
-    
+  
       //if token is generated, compare with the one 
       //in the system using the private key
     
@@ -45,7 +44,7 @@ module.exports.getUser =  (req, res, next)=>{
     if(token){
         jwt.verify(token, process.env.privateKey, async (err, decode) =>{
             if(err){
-                confirm.log(err)
+                console.log(err)
                 res.locals.err = null
                 next()
 
@@ -66,20 +65,3 @@ module.exports.getUser =  (req, res, next)=>{
 }
 
 
-//logging out a user
-// module.exports.logout = ()=>{
-//   const token = req.cookies.jwt
-
-//   if(token){
-
-//     jwtr.destroy(token, (err, decode) => {
-//       if(err){
-//         console.log(err)
-//       }else{console.log(decode)}
-      
-//     })
-//   }else{
-//     res.render('index', {title: "HomePage"})
-//   }
-  
-// }

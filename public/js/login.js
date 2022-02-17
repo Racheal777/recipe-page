@@ -33,7 +33,9 @@ form.addEventListener('submit', async (e) =>{
           console.log(data)
 
           
-
+          if (data.user) {
+            location.assign("/");
+          }
         //   error handling on the client side 
 
         if (data.error) {
@@ -46,9 +48,7 @@ form.addEventListener('submit', async (e) =>{
         }
 
 
-          if (data.user) {
-            location.assign("/about");
-          }
+          
         //   if (data.user) {
         //     location.assign("/");
         //   }

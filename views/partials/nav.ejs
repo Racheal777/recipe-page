@@ -1,6 +1,9 @@
 
 
+ 
+   
 <nav>
+  
     <div class="logo"><li><a href="/">cookIT</a></li></div>
     <ul>
         <li><a href="/">Home</a></li>
@@ -28,21 +31,37 @@
             </div>
           </div> 
     </ul>
+    
 
+    
+     
+    
+     <% if (user) { %>
+        <div>
+            <p><%= user.fullName %>  </p>  
+        </div>
 
-<!-- <div>
-    <form id="formz" action="/">
-        <input type="text" name="text" placeholder="Search here">
-        <i id="iconz" class="fa fa-search" aria-hidden="true"></i>
-
-    </form>
-</div> -->
-
-    <div class="log">
-        <li class="sign"><a href="/signup">Register</a></li>
-        <button class="login"><a href="/login">Login</a></button>
+        <div class="log">
+            
+            <button class="login"><a href="/logout">Logout</a></button>
+           
+        </div>
+     <% }else{ %>
+      
+        <div class="log">
+            <li class="sign"><a href="/signup">Register</a></li>
+            <button class="login"><a href="/login">Login</a></button>
+            
+            
+        </div> 
+    <%}%>
         
-        
-    </div>
-        
+     
+       
+
+       
+            
+       
+    
+     
 </nav>

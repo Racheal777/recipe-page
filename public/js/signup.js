@@ -21,7 +21,7 @@ form.addEventListener('submit', async (e) =>{
 
 
 try {
-    const response = await fetch("/signUp", {
+    const response = await fetch("/signup", {
       method: "POST",
       body: JSON.stringify({fullName, email, password }),
       headers: { "Content-Type": "application/json"}
@@ -30,7 +30,7 @@ try {
     const data = await response.json();
     console.log(data);
 
-    if (data.user) {
+    if (data.User) {
       location.assign("/");
     }
 

@@ -13,6 +13,8 @@ const router = express.Router()
 
 router.post('/login', registerR.login)
 
+router.get('/logout', registerR.loggingOut)
+
 
 
 

@@ -25,7 +25,7 @@ try {
        const token = generateToken(User._id) 
 
        //set cookies
-       res.cookie('jwt', token, {maxAge: 3 * 24 * 60 * 60, httpOnly:true})
+       res.cookie('jwt', token, {maxAge: 3 * 24 * 60 * 60 * 1000, httpOnly:true})
 
        //send our data
        res.status(201).json({User})
@@ -92,10 +92,18 @@ const login = async (req, res) =>{
     }
 }
 
-
+const loggingOut = (req, res) =>{
+  //set cookies
+  res.cookie('jwt', 0, {maxAge: 0, httpOnly:true})
+      res.redirect('/login')
+  
+    
+              
+}
 
 module.exports = {
     signup,
-     login
+     login,
+     loggingOut
 
 }

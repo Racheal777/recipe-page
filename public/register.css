@@ -67,6 +67,23 @@ font-weight: bold;
     
 }
 
+#email-el{
+    color: tomato;
+    padding: 5px 0px;
+    margin-bottom: 10px;
+    text-align: center;
+    font-size: 20px;
+    
+}
+
+#password-el{
+    color: tomato;
+    padding: 5px 0px;
+    margin-bottom: 10px;
+    text-align: center;
+    font-size: 20px;
+}
+
 #login-container button:hover{
     background-color: #ac2f2a;
     color: white;
