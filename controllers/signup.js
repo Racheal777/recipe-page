@@ -119,8 +119,11 @@ const allUsers = (req, res) =>{
 //getting one user
 const oneUser = (req, res) =>{
     register.findById(req.params.id).exec().then(results => {
-        res.render('profile', {title:"Profile", info: results})
-        console.log(chef)
+        recipe.find({"cookName" : 'racheal'}).then(result => {
+            res.render('profile', {title:"Profile", info: results, recipes: result})
+            console.log(chef)
+        })
+        
     }).catch(err => {
         console.log(err)
     })
