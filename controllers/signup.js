@@ -10,6 +10,7 @@ const { handleErrors, generateToken } = require("../helpers/userHelper");
 
 const{authUser, getUser, logout} = require('../middleware/authUser');
 const { chef } = require('./allControl');
+const recipe = require('../model/recipe');
 
 //signup
 
@@ -126,12 +127,27 @@ const oneUser = (req, res) =>{
 }
 
 
+//getting one user
+const oneUserRecipe = (req, res) =>{
+    register.findById(req.params.id).exec().then(results => {
+        recipe.find({"cookName" : 'racheal'}).then(result => {
+            res.render('success', {title:"Profile", results, result})
+            console.log(result)
+        })
+        
+    }).catch(err => {
+        console.log(err)
+    })
+}
+
+
 module.exports = {
     signup,
      login,
      loggingOut,
      allUsers,
      oneUser,
+      oneUserRecipe
      
 
 }

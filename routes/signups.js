@@ -47,6 +47,8 @@ router.get('/chef', registerR.allUsers)
 
 router.get('/chefs/:id', registerR.oneUser)
 
+router.get('/myRecipes', registerR.oneUserRecipe)
+
 
 
 

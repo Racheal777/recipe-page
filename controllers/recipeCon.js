@@ -9,38 +9,38 @@ const express = require('express')
 
 
 //callbacks for the route activity
-const saveData =  (req, res) => {
+// const saveData =  (req, res) => {
 
-    //destructuring the objects in the model
-    const{recipeName, cookName, email, level, category, time,
-        ingredients, instruction} = req.body;
+//     //destructuring the objects in the model
+//     const{recipeName, cookName, email, level, category, time,
+//         ingredients, instruction} = req.body;
 
-        //declaring a variable to pass the object
-    const addRecipe = {
-        recipeName, 
-        cookName, 
-        email,
-        level, 
-        category, 
-        time,
-        ingredients,
-        instruction,
+//         //declaring a variable to pass the object
+//     const addRecipe = {
+//         recipeName, 
+//         cookName, 
+//         email,
+//         level, 
+//         category, 
+//         time,
+//         ingredients,
+//         instruction,
         
-        foodImage : req.file.originalname
-    }
-    //creating an instance of the schema
-    const recipes = new recipe(addRecipe)
+//         foodImage : req.file.originalname
+//     }
+//     //creating an instance of the schema
+//     const recipes = new recipe(addRecipe)
 
-    //saving data to the database
-    recipes.save().then(results => {
-            if(results)
+//     //saving data to the database
+//     recipes.save().then(results => {
+//             if(results)
             
-            res.render('success', {title: "Success", recipe,})
+//             res.render('success', {title: "Success", recipe,})
             
-    }).catch(err =>{
-        console.log(err)
-    })  
-}
+//     }).catch(err =>{
+//         console.log(err)
+//     })  
+// }
 
 
 
@@ -113,7 +113,7 @@ const getAllDatas =  (req, res) => {
 
 //exporting module
 module.exports = {
-    saveData,
+    // saveData,
     getData,
     getAll,
     getAllDatas,
