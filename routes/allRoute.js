@@ -29,7 +29,7 @@ router.get('/contact', allControl.contact)
 
 router.get('/market', allControl.market)
 
-router.get('/chef', allControl.chef)
+// router.get('/chef', allControl.chef)
 
 
 

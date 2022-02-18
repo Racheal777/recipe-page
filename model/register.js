@@ -26,6 +26,13 @@ const userSchema = new Schema({
         minlength: [8, "Please the password length should at least be eight"]
     },
     
+    avatar: 
+        {
+            type: Schema.Types.ObjectId,
+            ref: "profilePic"
+        }   
+    
+
 }, {timestamps: true}, )
 
 

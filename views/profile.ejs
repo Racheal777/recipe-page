@@ -8,7 +8,7 @@
     <header>
         
 
-        <%- include('./partials/nav.ejs') %> 
+        <%- include('./partials/navv.ejs') %> 
 
 
 
@@ -18,13 +18,23 @@
                 <img src="/avatar/avatar<%= info.avatar %> " alt="pic">
 
                 <div class="text4">
-                    <h2><%= info.firstName + info.lastName %> </h2>
+                    <h2><%= info.fullName %> </h2>
                     <h3><%= info.email %> </h3></div>
 
             </div>
         </main>
 
-
+        <div class="container-form">
+           <form action="/avatar" method="post" enctype="multipart/form-data">
+            <div class="full">
+                <label for="" style="color: aliceblue;">Upload Profile Image</label>
+            <input type="file" name="avatar" id="" placeholder="Upload Image">
+        </div>
+            <div class="full">
+                <button type="submit" value="Submit">Add Image</button></div>
+        
+           </form> 
+        </div>
 
 
 
@@ -40,25 +50,11 @@
                 <div class="container">
 
                 
-                    <% if (names.length > 0) { %>
-                     <% names.forEach(doc => { %>
-                      
-                        <div class="cards">
-                            <a href="/get/<%= doc._id %> "> 
-                    <img src="/uploads/foodImage<%= doc.foodImage %> " alt="pic">
-
-                    <h2><%= doc.recipeName %> </h2>
                     
-
-                </a>
                 </div>
 
                 
-                    <% }) %>
-                    <% }  else { %>  
-                        <p><%= "No posts to display currently" %> </p>
-            
-                        <% } %>  %> 
+                    
                 
     
               </div>  

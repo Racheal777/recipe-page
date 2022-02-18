@@ -1,13 +1,15 @@
 //requiring all modules
 const express = require('express')
 const register = require('../model/register')
+const Avatar = require('../model/avatar')
 // const cookieParser = require("cookie-parser");
 const bcrypt = require("bcrypt");
 
 // const generateToken = require('../helpers/userHelper')
 const { handleErrors, generateToken } = require("../helpers/userHelper");
 
-const{authUser, getUser, logout} = require('../middleware/authUser')
+const{authUser, getUser, logout} = require('../middleware/authUser');
+const { chef } = require('./allControl');
 
 //signup
 
@@ -19,6 +21,7 @@ try {
     const newUser = new register({fullName, email,userName, password})
      
     const User = await newUser.save()
+    console.log(User)
 
     if(User){
        //using the token
@@ -99,9 +102,36 @@ const loggingOut = (req, res) =>{
               
 }
 
+
+//get all users
+
+const allUsers = (req, res) =>{
+    register.find().exec().then(results => {
+        res.render('chef', {title:"Chefs", chefs: results})
+        console.log(chef)
+    }).catch(err => {
+        console.log(err)
+    })
+}
+
+
+//getting one user
+const oneUser = (req, res) =>{
+    register.findById(req.params.id).exec().then(results => {
+        res.render('profile', {title:"Profile", info: results})
+        console.log(chef)
+    }).catch(err => {
+        console.log(err)
+    })
+}
+
+
 module.exports = {
     signup,
      login,
-     loggingOut
+     loggingOut,
+     allUsers,
+     oneUser,
+     
 
 }
