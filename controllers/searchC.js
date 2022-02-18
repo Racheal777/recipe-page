@@ -73,6 +73,7 @@ const searches = (req, res, next) =>{
                 if(render.length){
                     res.render('search', {title: "Home", recip: render})
                     next()
+                    console.log(render)
                 }else{
                     res.render("notFound", {title:"Not Found"})
                 }

@@ -50,13 +50,6 @@ const findRec = (req, res) =>{
 
 
 
-
-
-
-
-
-
-
 const get = (req, res) =>{
             Comment.find({"recipe_id": req.params.id}).then(doc =>{
                 console.log(Comment)
@@ -76,24 +69,51 @@ const get = (req, res) =>{
 //comment with most likes
 
 const popular = (req, res) =>{
-    recipe.find().exec().then(resultss => {
+    
 
-        Comment.find().exec().then(results =>{
-            const each = Object.keys(resultss).forEach(recs => recs.comment)
+        Comment.find().exec().then(result =>{
+            
+            if(result){
 
-            console.log(each)
-            const pop =  results.filter(result => result.rating1 > 3)
-     
-            res.render('popular', {title: "HomePage", pops:pop, recip: resultss})
-            // console.log(pop)
-            // console.log(resultss)
+           
+            recipe.findById(req.params.id).exec().then(results =>{
+                
 
+                const pop =  result.filter(result => result.rating1 > 3)
+         
+                res.render('popular', {title: "HomePage", pops:pop, })
+                // console.log(pop)
+                // console.log(resultss)
+            })
 
+        }
          }).catch(err => {
              console.log(err)
-         })
+         })   
+}
+
+//finding popular
+const findPopular = (req, res) =>{
+    recipe.find({"$comment": req.params.id}).then(result =>{
+        if(result){
+            console.log(result.id)
+            const comm = result
+
+            Comment.find({'recipe_id':result._id}).then(doc =>{
+                const pop = doc.filter(docs => docs.rating1 > 3)
+                // console.log(doc)
+                console.log(pop)
+                // console.log(result)
+                // res.send(result)
+                res.render('popular', 
+                {title: "Popular Recipes",
+                pops: pop,
+                recip : result    
+            })
+            })
+            
+        }
     })
-    
 }
 
 
@@ -103,5 +123,6 @@ module.exports = {
     get,
    findRec,
    popular,
+   findPopular
 //    mostLikes
 }

@@ -54,9 +54,7 @@ const login = async (req, res) =>{
         console.log(user)
 
         //compare password and hash the one the user is entering and 
-        //compare with the one in the database
-
-        
+        //compare with the one in the database 
         if(user){
             const isSame = await bcrypt.compare(password, user.password);
             //const isSame = await bcrypt.compare(password, user.password)

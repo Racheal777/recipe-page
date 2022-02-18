@@ -56,7 +56,7 @@ router.get('/get/:id', comments.findRec)
 
 router.get('/comment',comments.get)
 
-router.get('/popular',comments.popular)
+router.get('/popular',comments.findPopular)
 
 router.get('/search', search.searches)
 

@@ -9,7 +9,7 @@
 
     
         
-        <%- include('./partials/nav.ejs') %> 
+        <%- include('./partials/navv.ejs') %> 
        
 
             
@@ -37,15 +37,15 @@
             <div class="container">
 
                 
-                    <% if (pops.length > 0) { %>
+                    <% if (recip.length > 0) { %>
                         
-                     <% pops.forEach(recipe => { %>
+                     <% recip.forEach(recipe => { %>
                       
                         <div class="cards">
                             <a href="/get/<%= recipe._id %> "> 
                     <img src="/uploads/foodImage<%= recipe.foodImage %> " alt="pic">
 
-                    <h2><%= recipe.name %> </h2>
+                    <h2><%= recipe.recipeName %> </h2>
                     <p><%= recipe.recipe_id %> </p>
                     <p><%= recipe.message %> </p>
                     <p><%= recipe.rating1%> </p>
