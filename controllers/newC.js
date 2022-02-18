@@ -35,7 +35,7 @@ const sign = (req, res) =>{
           recipe: [recipes._id],
         })
         comment.save().then((doc) => {
-            res.render( "index", { title: "homepage", comment, recipes });
+            res.render( "success", { title: "Success", comment, recipes });
           });
     }) 
 
