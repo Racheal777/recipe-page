@@ -153,14 +153,8 @@ nav a:hover{
   .logout{
       border-top: 1px solid black;
   }
-  .prof-content span {
-   
-    
-    font-weight: bold;
-    
-    
-    
-    
+  .prof-content span { 
+    font-weight: bold;  
   }
   
   .prof-content a:hover {
